@@ -28,20 +28,16 @@ while contador == True:
             generadorlincong()
         elif Puntero_Interno ==2:
             generadorlincong()
-
         print("Desea continuar?")
         print("Si?: presione 1")
         print("No?: presione 2")
-        while contador2 == True:
+        Continuar = int(input("Digite una de las 2 opciones:"))
+        while(Continuar > 2 or Continuar < 1):
             Continuar = int(input("Digite una de las 2 opciones:"))
-            if Continuar == 1:
-                print("Reinicio")
-                contador2 = False
-            elif Continuar != 1 or Continuar !=2 :
-                Continuar = int(input("Digite bien el numero solo son 2 opciones:"))
-                contador2 = True
-            else:
-                contador = False
+        if Continuar == 1:
+            print("Reinicio")
+        else:
+            contador = False
     elif Puntero_Menu == 2:
         print("Usted selecciono el generador de estandar minimo con las pruebas de uniformidad")
         print("1.Prueba del chi cuadrado")
