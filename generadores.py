@@ -1,5 +1,7 @@
+import Pruebas_uniformidad
+
 Tabla = [0,0,0,0,0,0,0,0,0,0]
-ChiCalculadoTabla = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+
 def EvaluarRecurrencia(Xn,m):
     Rn = Xn/m
     if Rn < 0.1 and Rn >= 0:
@@ -23,16 +25,7 @@ def EvaluarRecurrencia(Xn,m):
     else:
         Tabla[9] += 1
 
-def PruebaChiCuadrado(Xcalculado):
-    Xcritico = float(input("Ingrese el chi critico: "))
-    if Xcalculado <= Xcritico:
-        print("Segun la prueba de Chi cuadrado el generador es bueno en cuanto a uniformidad")
-    else:
-        print("Segun la prueba de Chi cuadrado el generador NO!!!!! es bueno en cuanto a uniformidad")
 
-def ChiCalculado(TablaFrecuencia):
-    for i in range(10):
-        ChiCalculadoTabla[i] = (100 - Tabla[i])* (100 - Tabla[i])/ 100
 def generadorlincong():
     a = int(input("a es: "))
     c = int(input("c es: "))
