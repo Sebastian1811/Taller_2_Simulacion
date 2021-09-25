@@ -1,5 +1,4 @@
-import Pruebas_uniformidad
-
+import Pruebas_uniformidad as Prueba
 Tabla = [0,0,0,0,0,0,0,0,0,0]
 
 def EvaluarRecurrencia(Xn,m):
@@ -41,8 +40,8 @@ def generadorlincong():
         res = (a * res + c) % m
         EvaluarRecurrencia(res,m)
         print(res)
-    ChiCalculado(Tabla)
-    PruebaChiCuadrado(sum(ChiCalculadoTabla))
+    Prueba.ChiCalculado(Tabla)
+    Prueba.PruebaChiCuadrado()
 
 def generadorestmin():
     a = int(input("a es: "))
