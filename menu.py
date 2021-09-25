@@ -1,4 +1,4 @@
-from generadores import *
+from generadores import *  
 
 print("############################ MENU ###################################")
 print("Se implementaron los generadores lineal y congruente con 9 grados de libertad, se generaron 1000 numeros pseudoaleatorios por cada generador")
