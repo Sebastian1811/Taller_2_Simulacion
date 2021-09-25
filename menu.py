@@ -49,23 +49,26 @@ while contador == True:
         print("1.Prueba del chi cuadrado")
         print("2.prueba de kolmogorov")
         Puntero_Interno = int(input("Eliga una opcion:"))
+        while(Puntero_Interno > 2 or Puntero_Interno < 1):
+            Puntero_Interno = int(input("Pon una opcion valida:"))
         if Puntero_Interno == 1:
             generadorestmin()
-        else:
+            prueba.PruebaChiCuadrado(returnTabla(),returnN())
+            ReiniciarTabla()
+        elif Puntero_Interno ==2:
             generadorestmin()
+            prueba.PruebaKolmogorov(returnTabla(),returnN())
+            ReiniciarTabla()
         print("Desea continuar?")
         print("Si?: presione 1")
         print("No?: presione 2")
-        while contador2 == True:
+        Continuar = int(input("Digite una de las 2 opciones:"))
+        while(Continuar > 2 or Continuar < 1):
             Continuar = int(input("Digite una de las 2 opciones:"))
-            if Continuar == 1:
-                print("Reinicio")
-                contador2 = False
-            elif Continuar != 1 or Continuar !=2 :
-                Continuar = int(input("Digite bien el numero solo son 2 opciones:"))
-                contador2 = True
-            else:
-                contador = False
+        if Continuar == 1:
+            print("Reinicio")
+        else:
+            contador = False
     elif Puntero_Menu == 3:
         print("")
     else:
