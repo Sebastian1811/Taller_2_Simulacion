@@ -39,8 +39,10 @@ def generadorlincong():
         res = (a * res + c) % m
         EvaluarRecurrencia(res,m)
         #print(res)
-    Prueba.ChiCalculado(Tabla)
-    Prueba.PruebaChiCuadrado(Tabla)
+    #Prueba.ChiCalculado(Tabla)
+    #Prueba.PruebaChiCuadrado(Tabla)
+    Prueba.CalcKolmogorov(Tabla,1000)
+    Prueba.PruebaKolmogorov(Tabla)
 
 def generadorestmin():
     a = 106#int(input("a es: "))
@@ -55,6 +57,6 @@ def generadorestmin():
     for i in range(n-1):
         res = (a * res) % m
         EvaluarRecurrencia(res,m)
-    Prueba.ChiCalculado(Tabla)
-    Prueba.PruebaChiCuadrado(Tabla)    
+    #Prueba.ChiCalculado(Tabla)
+    #Prueba.PruebaChiCuadrado(Tabla)
         #print(res)
