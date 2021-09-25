@@ -2,7 +2,7 @@ from decimal import *
 import math
 ChiCalculadoTabla = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 KolmogorovCalculado =  [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
-
+FOA = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 def PruebaChiCuadrado(TablaFrecuencia):
     Xcritico = 16.92#float(input("Ingrese el chi critico: "))
     if sum(ChiCalculadoTabla) <= Xcritico:
@@ -31,26 +31,36 @@ def DibujarTabla(TablaFrecuencia,xc):
 
 def CalcKolmogorov(TablaFrecuencia,numerodatos):
     getcontext()
-    getcontext().prec = 1
+    getcontext().prec = 2
     Rango = Decimal(0.1)
     for i in range(10):
-        KolmogorovCalculado[i] = abs (Rango - Decimal((TablaFrecuencia[i]/numerodatos)))
+        KolmogorovCalculado[i] = abs (Rango - Decimal(FOA[i]/numerodatos))
+        Rango += Decimal(0.1)
 
 def PruebaKolmogorov(TablaFrecuencia):
     GradosLibertad = 999
     Dmcritico = 1.36 / math.sqrt(1000)
+    CalcularFOA(TablaFrecuencia)
     CalcKolmogorov(TablaFrecuencia,1000)
     if min(KolmogorovCalculado) <= Dmcritico:
+        DibujarKolmogorov(TablaFrecuencia)
         print("Segun la prueba de Kolmogorov el generador es bueno en cuanto a uniformidad")
     else:
         print("Segun la prueba de Kolmogorov el generador NO!!!!! es bueno en cuanto a uniformidad")
 
+def CalcularFOA(TablaFrecuencia):
+    for i in range(10):
+        if i == 0:
+            FOA[i] = TablaFrecuencia[i]
+        else:
+            FOA [i] = TablaFrecuencia[i]+FOA[i-1]
+
 def DibujarKolmogorov(TablaFrecuencia):
     getcontext()
     getcontext().prec = 1
+
+    rango = 0
+    print("  Rango  |   FO   |   FOA     |    POA  |  PEA  | |PEA  - POA | ")
     for i in range(10):
-        print(rango,"-" ,rango +Decimal(0.1)," | ",TablaFrecuencia[i]," | ","  100    |",ChiCalculadoTabla[i])
+        print(rango,"-" ,rango +Decimal(0.1)," | ",TablaFrecuencia[i]," | ", FOA[i],"  |   ",FOA[i]/1000,"  |  ",rango+Decimal(0.1),"     |  ",KolmogorovCalculado[i])
         rango =Decimal( rango + Decimal(0.1))
-    print("ChiCalculado es: ",sum(ChiCalculadoTabla))
-    print("Segun la prueba chiCuadrado: ChiCalculado <= chicritico")
-    print(sum(ChiCalculadoTabla),"<=",xc)
