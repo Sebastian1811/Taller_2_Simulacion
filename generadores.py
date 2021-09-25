@@ -40,7 +40,7 @@ def generadorlincong():
         EvaluarRecurrencia(res,m)
         #print(res)
     Prueba.ChiCalculado(Tabla)
-    Prueba.PruebaChiCuadrado()
+    Prueba.PruebaChiCuadrado(Tabla)
 
 def generadorestmin():
     a = int(input("a es: "))
