@@ -31,36 +31,43 @@ def DibujarTabla(TablaFrecuencia,xc):
 
 def CalcKolmogorov(TablaFrecuencia,numerodatos):
     getcontext()
-    getcontext().prec = 2
+    getcontext().prec = 3
     Rango = Decimal(0.1)
     for i in range(10):
-        KolmogorovCalculado[i] = abs (Rango - Decimal(FOA[i]/numerodatos))
+        KolmogorovCalculado[i] = abs (Rango - Decimal(Decimal(FOA[i])/numerodatos))
         Rango += Decimal(0.1)
 
-def PruebaKolmogorov(TablaFrecuencia):
+def PruebaKolmogorov(TablaFrecuencia,datosGenerados):
     GradosLibertad = 999
-    Dmcritico = 1.36 / math.sqrt(1000)
+    Dmcritico = 1.36 / math.sqrt(datosGenerados)
     CalcularFOA(TablaFrecuencia)
-    CalcKolmogorov(TablaFrecuencia,1000)
-    if min(KolmogorovCalculado) <= Dmcritico:
-        DibujarKolmogorov(TablaFrecuencia)
-        print("Segun la prueba de Kolmogorov el generador es bueno en cuanto a uniformidad")
+    CalcKolmogorov(TablaFrecuencia,datosGenerados)
+    DibujarKolmogorov(TablaFrecuencia,datosGenerados)
+
+    if max(KolmogorovCalculado) <= Dmcritico:
+
+        print("Segun la prueba de Kolmogorov el generador es BUENO!!! en cuanto a uniformidad")
+        print(max(KolmogorovCalculado)," <= ",Dmcritico)
     else:
         print("Segun la prueba de Kolmogorov el generador NO!!!!! es bueno en cuanto a uniformidad")
+        print(min(KolmogorovCalculado)," > ",Dmcritico)
 
 def CalcularFOA(TablaFrecuencia):
+
     for i in range(10):
         if i == 0:
             FOA[i] = TablaFrecuencia[i]
         else:
             FOA [i] = TablaFrecuencia[i]+FOA[i-1]
-
-def DibujarKolmogorov(TablaFrecuencia):
+def ObtMenor():
+    for i in range(10):
+        if KolmogorovCalculado[i] > 0:
+            return i
+def DibujarKolmogorov(TablaFrecuencia,datosGenerados):
     getcontext()
     getcontext().prec = 1
-
     rango = 0
     print("  Rango  |   FO   |   FOA     |    POA  |  PEA  | |PEA  - POA | ")
     for i in range(10):
-        print(rango,"-" ,rango +Decimal(0.1)," | ",TablaFrecuencia[i]," | ", FOA[i],"  |   ",FOA[i]/1000,"  |  ",rango+Decimal(0.1),"     |  ",KolmogorovCalculado[i])
+        print(rango,"-" ,rango +Decimal(0.1)," | ",TablaFrecuencia[i]," | ", FOA[i],"  |   ",FOA[i]/datosGenerados,"  |  ",rango+Decimal(0.1),"     |  ",KolmogorovCalculado[i])
         rango =Decimal( rango + Decimal(0.1))
