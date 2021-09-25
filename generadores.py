@@ -37,7 +37,7 @@ def generadorlincong():
     m = int(input("m es: "))
     Xo = int(input("Xo es: "))
     global n
-    n = int(input(" cuantos datos desea generar: "))
+    n = 1000#int(input(" cuantos datos desea generar: "))
     print()
     #print(Xo)
     res = (a * Xo + c) % m
@@ -57,7 +57,7 @@ def generadorestmin():
     m = int(input("m es: "))
     Xo = int(input("Xo es: "))
     global n
-    n = int(input(" cuantos datos desea generar: "))
+    n = 1000#int(input(" cuantos datos desea generar: "))
     print()
     print(Xo)
     res = (a * Xo) % m
