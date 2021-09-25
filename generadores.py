@@ -27,6 +27,7 @@ def EvaluarRecurrencia(Xn,m):
 def ReiniciarTabla():
     for i in range(10):
         Tabla[i] = 0
+        
 def generadorlincong():
     a = 106#int(input("a es: "))
     c = 1283#int(input("c es: "))
@@ -42,10 +43,10 @@ def generadorlincong():
         res = (a * res + c) % m
         EvaluarRecurrencia(res,m)
         #print(res)
-    #Prueba.ChiCalculado(Tabla)
-    #Prueba.PruebaChiCuadrado(Tabla)
-    #Prueba.CalcKolmogorov(Tabla,1000)
-    Prueba.PruebaKolmogorov(Tabla,n)
+
+    #Prueba.PruebaChiCuadrado(Tabla,n)
+
+    #Prueba.PruebaKolmogorov(Tabla,n)
 
 def generadorestmin():
     a = 106#int(input("a es: "))
