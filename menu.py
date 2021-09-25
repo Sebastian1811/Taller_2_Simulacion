@@ -1,5 +1,5 @@
 from generadores import *
-from Pruebas_uniformidad import *
+import Pruebas_uniformidad as prueba
 contador = True
 contador2 = True
 while contador == True:
@@ -27,7 +27,7 @@ while contador == True:
             Puntero_Interno = int(input("Pon una opcion valida:"))
         if Puntero_Interno == 1:
             generadorlincong()
-            
+            pru
         elif Puntero_Interno ==2:
             generadorlincong()
         print("Desea continuar?")
