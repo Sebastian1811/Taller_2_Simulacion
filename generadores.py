@@ -24,13 +24,12 @@ def EvaluarRecurrencia(Xn,m):
     else:
         Tabla[9] += 1
 
-
 def generadorlincong():
-    a = int(input("a es: "))
-    c = int(input("c es: "))
-    m = int(input("m es: "))
-    Xo = int(input("Xo es: "))
-    n = int(input("Cantidad de número que desea generar: "))
+    a = 106#int(input("a es: "))
+    c = 1283#int(input("c es: "))
+    m = 6075#int(input("m es: "))
+    Xo = 5#int(input("Xo es: "))
+    n =1000
     print()
     print(Xo)
     res = (a * Xo + c) % m
@@ -39,7 +38,7 @@ def generadorlincong():
     for i in range(n-1):
         res = (a * res + c) % m
         EvaluarRecurrencia(res,m)
-        print(res)
+        #print(res)
     Prueba.ChiCalculado(Tabla)
     Prueba.PruebaChiCuadrado()
 
@@ -59,28 +58,3 @@ def generadorestmin():
 generadorlincong()
 
 #generadorestmin()
-
-# a = 28
-# c = 14
-# m = 100
-# Xo = 27
-
-""" Linear Congruente
-27 70 74 86 22 30 54 26 42 90
-34 66 62 50 14 6  82 10 94 2
-70 74 86 22 30 54 26 42 90 34
-66 62 50 14 6  82 10 94 46 2
-*70 74 86 22 30 54 26 42 90 34
-
-* = donde se vuelve a generar el patrón
-"""
-
-""" Linear Congruente
-27 56 68 4  12 36 8  24 72 16
-48 44 32 96 88 64 92 76 28 84
-52 *56 68 4  12 36 8  24 72 16
-48 44 32 96 88 64 92 76 28 84
-52 56 68 4  12 36 8  24 72 16
-
-* = donde se vuelve a generar el patrón
-"""
