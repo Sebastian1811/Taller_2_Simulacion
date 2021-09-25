@@ -23,7 +23,7 @@ while contador == True:
         print("2.prueba de kolmogorov")
         Puntero_Interno = int(input("Eliga una opcion:"))
         while(Puntero_Interno > 2 or Puntero_Interno < 1):
-            Puntero_Interno = int(input("Pon una opcion valida Uwu:"))
+            Puntero_Interno = int(input("Pon una opcion valida:"))
         if Puntero_Interno == 1:
             generadorlincong()
         elif Puntero_Interno ==2:
