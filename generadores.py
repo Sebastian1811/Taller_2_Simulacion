@@ -32,10 +32,10 @@ def ReiniciarTabla():
         Tabla[i] = 0
 
 def generadorlincong():
-    a = 106#int(input("a es: "))
-    c = 1283#int(input("c es: "))
-    m = 6075#int(input("m es: "))
-    Xo = 5#int(input("Xo es: "))
+    a = int(input("a es: "))
+    c = int(input("c es: "))
+    m = int(input("m es: "))
+    Xo = int(input("Xo es: "))
     global n
     n = int(input(" cuantos datos desea generar: "))
     print()
@@ -53,9 +53,9 @@ def generadorlincong():
     #Prueba.PruebaKolmogorov(Tabla,n)
 
 def generadorestmin():
-    a = 106#int(input("a es: "))
-    m = 1283#int(input("m es: "))
-    Xo = 5#int(input("Xo es: "))
+    a = int(input("a es: "))
+    m = int(input("m es: "))
+    Xo = int(input("Xo es: "))
     global n
     n = int(input(" cuantos datos desea generar: "))
     print()
