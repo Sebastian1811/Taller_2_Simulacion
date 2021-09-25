@@ -40,7 +40,17 @@ def PruebaKolmogorov(TablaFrecuencia):
     GradosLibertad = 999
     Dmcritico = 1.36 / math.sqrt(1000)
     CalcKolmogorov(TablaFrecuencia,1000)
-    if sum(KolmogorovCalculado) <= Dmcritico:
+    if min(KolmogorovCalculado) <= Dmcritico:
         print("Segun la prueba de Kolmogorov el generador es bueno en cuanto a uniformidad")
     else:
         print("Segun la prueba de Kolmogorov el generador NO!!!!! es bueno en cuanto a uniformidad")
+
+def DibujarKolmogorov(TablaFrecuencia):
+    getcontext()
+    getcontext().prec = 1
+    for i in range(10):
+        print(rango,"-" ,rango +Decimal(0.1)," | ",TablaFrecuencia[i]," | ","  100    |",ChiCalculadoTabla[i])
+        rango =Decimal( rango + Decimal(0.1))
+    print("ChiCalculado es: ",sum(ChiCalculadoTabla))
+    print("Segun la prueba chiCuadrado: ChiCalculado <= chicritico")
+    print(sum(ChiCalculadoTabla),"<=",xc)
