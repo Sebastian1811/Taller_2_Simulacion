@@ -19,9 +19,10 @@ while contador == True:
     if Puntero_Menu == 1:
         print("Usted selecciono el generador lineal congruente con las pruebas de uniformidad")
         generadorlincong()
-        Continuar = int(input("Desea continuar?:"))
+        print("Desea continuar?")
         print("Si?: presione 1")
         print("No?: presione 2")
+        Continuar = int(input("Digite una de las 2 opciones:"))
         if Continuar == 1:
             Puntero_Menu = int(input("Eliga una opcion:"))
         else:
