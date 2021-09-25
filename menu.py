@@ -9,7 +9,8 @@ if Puntero_Menu == 1:
     print("Usted selecciono el generador lineal congruente con las pruebas de uniformidad")
     generadorlincong()
 elif Puntero_Menu == 2:
-    print("")
+    print("Usted selecciono el generador de estandar minimo con las pruebas de uniformidad")
+    generadorestmin()
 elif Puntero_Menu == 3:
     print("")
 else:
