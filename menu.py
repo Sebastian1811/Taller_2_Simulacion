@@ -22,10 +22,13 @@ while contador == True:
         print("1.Prueba del chi cuadrado")
         print("2.prueba de kolmogorov")
         Puntero_Interno = int(input("Eliga una opcion:"))
+        while(Puntero_Interno > 2 or Puntero_Interno < 1):
+            Puntero_Interno = int(input("Pon una opcion valida Uwu:"))
         if Puntero_Interno == 1:
             generadorlincong()
-        else:
+        elif Puntero_Interno ==2:
             generadorlincong()
+
         print("Desea continuar?")
         print("Si?: presione 1")
         print("No?: presione 2")
