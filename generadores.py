@@ -1,6 +1,6 @@
 import Pruebas_uniformidad as Prueba
 Tabla = [0,0,0,0,0,0,0,0,0,0]
-
+n = 0
 def EvaluarRecurrencia(Xn,m):
     Rn = Xn/m
     if Rn < 0.1 and Rn >= 0:
@@ -23,22 +23,26 @@ def EvaluarRecurrencia(Xn,m):
         Tabla[8] += 1
     else:
         Tabla[9] += 1
-
+def returnTabla():
+    return Tabla
+def returnN():
+    return n
 def ReiniciarTabla():
     for i in range(10):
         Tabla[i] = 0
-        
+
 def generadorlincong():
     a = 106#int(input("a es: "))
     c = 1283#int(input("c es: "))
     m = 6075#int(input("m es: "))
     Xo = 5#int(input("Xo es: "))
-    n =1000
+    global n
+    n = int(input(" cuantos datos desea generar: "))
     print()
-    print(Xo)
+    #print(Xo)
     res = (a * Xo + c) % m
     EvaluarRecurrencia(res,m)
-    print(res)
+    #print(res)
     for i in range(n-1):
         res = (a * res + c) % m
         EvaluarRecurrencia(res,m)
@@ -52,7 +56,8 @@ def generadorestmin():
     a = 106#int(input("a es: "))
     m = 1283#int(input("m es: "))
     Xo = 5#int(input("Xo es: "))
-    n = 1000#int(input("Cantidad de número que desea generar: "))
+    global n
+    n = int(input(" cuantos datos desea generar: "))
     print()
     print(Xo)
     res = (a * Xo) % m

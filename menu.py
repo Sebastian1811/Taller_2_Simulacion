@@ -27,9 +27,12 @@ while contador == True:
             Puntero_Interno = int(input("Pon una opcion valida:"))
         if Puntero_Interno == 1:
             generadorlincong()
-            pru
+            prueba.PruebaChiCuadrado(returnTabla(),returnN())
+            ReiniciarTabla()
         elif Puntero_Interno ==2:
             generadorlincong()
+            prueba.PruebaKolmogorov(returnTabla(),returnN())
+            ReiniciarTabla()
         print("Desea continuar?")
         print("Si?: presione 1")
         print("No?: presione 2")

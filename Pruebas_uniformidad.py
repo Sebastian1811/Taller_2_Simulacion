@@ -12,16 +12,19 @@ def PruebaChiCuadrado(TablaFrecuencia,datosGenerados):
         print("Segun la prueba de Chi cuadrado el generador es BUENO!!! en cuanto a uniformidad")
         print("ChiCalculado es: ",sum(ChiCalculadoTabla))
         print("Segun la prueba chiCuadrado: ChiCalculado <= chicritico")
-        print(sum(ChiCalculadoTabla),"<=",xc)
+        print(sum(ChiCalculadoTabla),"<=",Xcritico)
     else:
         print("Segun la prueba de Chi cuadrado el generador NO!!!!! es bueno en cuanto a uniformidad")
         print("ChiCalculado es: ",sum(ChiCalculadoTabla))
         print("Segun la prueba chiCuadrado: ChiCalculado <= chicritico")
-        print(sum(ChiCalculadoTabla),">",xc)
-        
+        print(sum(ChiCalculadoTabla),">",Xcritico)
+
 def ChiCalculado(TablaFrecuencia,datosGenerados):
+    getcontext()
+    getcontext().prec = 2
     for i in range(10):
-        ChiCalculadoTabla[i] = (datosGenerados - TablaFrecuencia[i])* (datosGenerados - TablaFrecuencia[i])/ datosGenerados
+        cuadrado =(datosGenerados/10 - TablaFrecuencia[i])**2
+        ChiCalculadoTabla[i] = cuadrado / (datosGenerados/10)
 
 
 def DibujarTabla(TablaFrecuencia,xc,datosGenerados):
@@ -30,7 +33,7 @@ def DibujarTabla(TablaFrecuencia,xc,datosGenerados):
     rango = 0
     print("  Rango  |   FE   |   FO     |  (FE - FO)^2 / FE | ")
     for i in range(10):
-        print(rango,"-" ,rango +Decimal(0.1)," | ",TablaFrecuencia[i]," | ",datosGenerados,"      |",ChiCalculadoTabla[i])
+        print(rango,"-" ,rango +Decimal(0.1)," | ",TablaFrecuencia[i]," | ",datosGenerados/10,"      |",ChiCalculadoTabla[i])
         rango =Decimal( rango + Decimal(0.1))
 
 
