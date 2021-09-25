@@ -1,9 +1,9 @@
 ChiCalculadoTabla = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 
 
-def PruebaChiCuadrado(Xcalculado):
+def PruebaChiCuadrado():
     Xcritico = float(input("Ingrese el chi critico: "))
-    if Xcalculado <= Xcritico:
+    if sum(ChiCalculadoTabla) <= Xcritico:
         print("Segun la prueba de Chi cuadrado el generador es bueno en cuanto a uniformidad")
     else:
         print("Segun la prueba de Chi cuadrado el generador NO!!!!! es bueno en cuanto a uniformidad")
