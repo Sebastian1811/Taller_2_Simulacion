@@ -55,6 +55,7 @@ def generadorestmin():
         res = (a * res) % m
         print(res)
 
-generadorlincong()
+
+#generadorlincong()
 
 #generadorestmin()
