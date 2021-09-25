@@ -18,13 +18,19 @@ while contador == True:
 
     if Puntero_Menu == 1:
         print("Usted selecciono el generador lineal congruente con las pruebas de uniformidad")
-        generadorlincong()
+        print("1.Prueba del chi cuadrado")
+        print("2.prueba de kolmogorov")
+        Puntero_Interno = int(input("Eliga una opcion:"))
+        if Puntero_Interno == 1:
+            print("1")
+        else:
+            print("Kolmogorov")
         print("Desea continuar?")
         print("Si?: presione 1")
         print("No?: presione 2")
         Continuar = int(input("Digite una de las 2 opciones:"))
         if Continuar == 1:
-            Puntero_Menu = int(input("Eliga una opcion:"))
+            print("Reinicio")
         else:
             contador = False
     elif Puntero_Menu == 2:
