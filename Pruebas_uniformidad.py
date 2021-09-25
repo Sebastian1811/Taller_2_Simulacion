@@ -1,3 +1,4 @@
+from decimal import *
 ChiCalculadoTabla = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 
 
@@ -14,10 +15,10 @@ def ChiCalculado(TablaFrecuencia):
         ChiCalculadoTabla[i] = (100 - TablaFrecuencia[i])* (100 - TablaFrecuencia[i])/ 100
 
 def DibujarTabla():
+    getcontext()
+    getcontext().prec = 1
     rango = 0
-    print("Rango | FE | FO | (FE - FO)^2 / FE | ")
+    print("  Rango  | FE | FO | (FE - FO)^2 / FE | ")
     for i in range(10):
-        print(rango )
-        print(rango +0.1)
-
-        rango = rango + 0.1
+        print(rango,"-" ,rango +Decimal(0.1))
+        rango =Decimal( rango + Decimal(0.1))
