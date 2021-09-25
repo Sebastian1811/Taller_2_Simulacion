@@ -43,19 +43,18 @@ def generadorlincong():
     Prueba.PruebaChiCuadrado(Tabla)
 
 def generadorestmin():
-    a = int(input("a es: "))
-    m = int(input("m es: "))
-    Xo = int(input("Xo es: "))
-    n = int(input("Cantidad de número que desea generar: "))
+    a = 106#int(input("a es: "))
+    m = 1283#int(input("m es: "))
+    Xo = 5#int(input("Xo es: "))
+    n = 1000#int(input("Cantidad de número que desea generar: "))
     print()
     print(Xo)
     res = (a * Xo) % m
+    EvaluarRecurrencia(res,m)
     print(res)
     for i in range(n-1):
         res = (a * res) % m
-        print(res)
-
-
-#generadorlincong()
-
-#generadorestmin()
+        EvaluarRecurrencia(res,m)
+    Prueba.ChiCalculado(Tabla)
+    Prueba.PruebaChiCuadrado(Tabla)    
+        #print(res)
