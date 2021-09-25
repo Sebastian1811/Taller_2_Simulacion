@@ -22,9 +22,9 @@ while contador == True:
         print("2.prueba de kolmogorov")
         Puntero_Interno = int(input("Eliga una opcion:"))
         if Puntero_Interno == 1:
-            print("1")
+            generadorlincong()
         else:
-            print("Kolmogorov")
+            generadorlincong()
         print("Desea continuar?")
         print("Si?: presione 1")
         print("No?: presione 2")
