@@ -46,8 +46,8 @@ while contador == True:
         print("Desea continuar?")
         print("Si?: presione 1")
         print("No?: presione 2")
-        Continuar = int(input("Digite una de las 2 opciones:"))
         while contador2 == True:
+            Continuar = int(input("Digite una de las 2 opciones:"))
             if Continuar == 1:
                 print("Reinicio")
                 contador2 = False
