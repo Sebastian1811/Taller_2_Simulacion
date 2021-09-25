@@ -10,4 +10,4 @@ def PruebaChiCuadrado(Xcalculado):
 
 def ChiCalculado(TablaFrecuencia):
     for i in range(10):
-        ChiCalculadoTabla[i] = (100 - Tabla[i])* (100 - Tabla[i])/ 100
+        ChiCalculadoTabla[i] = (100 - TablaFrecuencia[i])* (100 - TablaFrecuencia[i])/ 100
