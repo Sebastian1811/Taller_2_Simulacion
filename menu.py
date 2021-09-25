@@ -17,7 +17,8 @@ while contador == True:
     print("\n")
 
     Puntero_Menu = int(input("Eliga una opcion:"))
-
+    while (Puntero_Menu > 4 or Puntero_Menu < 1):
+        Puntero_Menu = int(input("Eliga una numero entero entre 1 y 4 no es tan dificil:"))
     if Puntero_Menu == 1:
         print("Usted selecciono el generador lineal congruente con las pruebas de uniformidad")
         print("1.Prueba del chi cuadrado")
