@@ -5,45 +5,31 @@ contador2 = True
 contador3 = True
 
 def probar_generadores():
-    print("Bienvenido al menu de generadores")
-    print("1.Generador lineal congruente")
-    print("2.Generador estandar minimo")
-    print("3.Volver")
-    Puntero_Interno = int(input("Eliga una opcion:"))
-    while (Puntero_Interno > 3 or Puntero_Interno < 1):
+    while True:
+        print("Bienvenido al menu de generadores")
+        print("1.Generador lineal congruente")
+        print("2.Generador estandar minimo")
+        print("3.Volver")
         Puntero_Interno = int(input("Eliga una opcion:"))
-    while contador2 == True:
-        if Puntero_Interno == 1:
-            print("Bienvenido al menu del generador lineal congruente")
-            print("1.Mostrar recurrencia")
-            print("2.Volver")
-            Puntero_Interno2 = int(input("Eliga una opcion:"))
-            while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
+        while (Puntero_Interno > 3 or Puntero_Interno < 1):
+            Puntero_Interno = int(input("Eliga una opcion:"))
+
+        while True:
+            if Puntero_Interno == 1:
+                print("Bienvenido al menu del generador lineal congruente")
+                print("1.Mostrar recurrencia")
+                print("2.Volver")
                 Puntero_Interno2 = int(input("Eliga una opcion:"))
-            while True:
+                while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
+                    Puntero_Interno2 = int(input("Eliga una opcion:"))
+
                 if Puntero_Interno2 == 1:
-                    #Mostrar recurrencia
-                    print("Jesus cristo ayudame")
-                    break   
-        elif Puntero_Interno == 2:
-            contador3 = True
-            print("Bienvenido al menu del generador de estandar minimo")
-            print("Bienvenido al menu del generador lineal congruente")
-            print("1.Mostrar recurrencia")
-            print("2.Volver")
-            Puntero_Interno2 = int(input("Eliga una opcion:"))
-            while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
-                Puntero_Interno2 = int(input("Eliga una opcion:"))
-            while contador3 == True:
-                if Puntero_Interno2 == 1:
-                    #Mostrar recurrencia
-                    contador3 = False
-                else:
+                    print("atrapaaadaas")
                     break
-        else:
-            break
- 
-                
+                elif Puntero_Interno2 == 2:
+                    break
+
+
 
 
 while contador == True:
