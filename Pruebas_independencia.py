@@ -1,10 +1,10 @@
 import math
 corridas = list()
 TablaSeries = [
-[0,0,0,0,0]
-[0,0,0,0,0]
-[0,0,0,0,0]
-[0,0,0,0,0]
+[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,0,0,0],
 [0,0,0,0,0]
 ]
 def ContarCorridas(recurrencias ):
@@ -89,7 +89,73 @@ def MapearPares(recurrencias):
             count+=2
             #print(count)
     return listaPares
+
+def UbicarPares(ParesRecurrencias):
+
+    for i in range(len(ParesRecurrencias)):
+        for j in range(1):
+            if ParesRecurrencias[i][j] < 0.2 and ParesRecurrencias[i][j] >= 0:
+                if ParesRecurrencias[i][j+1] < 0.2  and ParesRecurrencias[i][j+1]>= 0:
+                    TablaSeries[0][0] += 1
+                elif ParesRecurrencias[i][j+1] < 0.4  and ParesRecurrencias[i][j+1]>= 0.2:
+                    TablaSeries[0][1] += 1
+                elif ParesRecurrencias[i][j+1] < 0.6  and ParesRecurrencias[i][j+1]>= 0.4:
+                    TablaSeries[0][2] += 1
+                elif ParesRecurrencias[i][j+1] < 0.8  and ParesRecurrencias[i][j+1]>= 0.6:
+                    TablaSeries[0][3] += 1
+                elif ParesRecurrencias[i][j+1] < 1  and ParesRecurrencias[i][j+1]>= 0.8:
+                    TablaSeries[0][4] += 1
+
+            elif ParesRecurrencias[i][j] < 0.4 and ParesRecurrencias[i][j] >= 0.2:
+                if ParesRecurrencias[i][j+1] < 0.2  and ParesRecurrencias[i][j+1]>= 0:
+                    TablaSeries[1][0] += 1
+                elif ParesRecurrencias[i][j+1] < 0.4  and ParesRecurrencias[i][j+1]>= 0.2:
+                    TablaSeries[1][1] += 1
+                elif ParesRecurrencias[i][j+1] < 0.6  and ParesRecurrencias[i][j+1]>= 0.4:
+                    TablaSeries[1][2] += 1
+                elif ParesRecurrencias[i][j+1] < 0.8  and ParesRecurrencias[i][j+1]>= 0.6:
+                    TablaSeries[1][3] += 1
+                elif ParesRecurrencias[i][j+1] < 1 and ParesRecurrencias[i][j+1]>= 0.8:
+                    TablaSeries[1][4] += 1
+
+            elif ParesRecurrencias[i][j] < 0.6 and ParesRecurrencias[i][j] >= 0.4:
+                if ParesRecurrencias[i][j+1] < 0.2  and ParesRecurrencias[i][j+1]>= 0:
+                    TablaSeries[2][0] += 1
+                elif ParesRecurrencias[i][j+1] < 0.4  and ParesRecurrencias[i][j+1]>= 0.2:
+                    TablaSeries[2][1] += 1
+                elif ParesRecurrencias[i][j+1] < 0.6  and ParesRecurrencias[i][j+1]>= 0.4:
+                    TablaSeries[2][2] += 1
+                elif ParesRecurrencias[i][j+1] < 0.8  and ParesRecurrencias[i][j+1]>= 0.6:
+                    TablaSeries[2][3] += 1
+                elif ParesRecurrencias[i][j+1] < 1 and ParesRecurrencias[i][j+1]>= 0.8:
+                    TablaSeries[2][4] += 1
+
+            elif ParesRecurrencias[i][j] < 0.8 and ParesRecurrencias[i][j] >= 0.6:
+                if ParesRecurrencias[i][j+1] < 0.2  and ParesRecurrencias[i][j+1]>= 0:
+                    TablaSeries[3][0] += 1
+                elif ParesRecurrencias[i][j+1] < 0.4  and ParesRecurrencias[i][j+1]>= 0.2:
+                    TablaSeries[3][1] += 1
+                elif ParesRecurrencias[i][j+1] < 0.6  and ParesRecurrencias[i][j+1]>= 0.4:
+                    TablaSeries[3][2] += 1
+                elif ParesRecurrencias[i][j+1] < 0.8  and ParesRecurrencias[i][j+1]>= 0.6:
+                    TablaSeries[3][3] += 1
+                elif ParesRecurrencias[i][j+1] < 1  and ParesRecurrencias[i][j+1]>= 0.8:
+                    TablaSeries[3][4] += 1
+
+            elif ParesRecurrencias[i][j] < 1 and ParesRecurrencias[i][j] >= 0.8:
+                if ParesRecurrencias[i][j+1] < 0.2  and ParesRecurrencias[i][j+1]>= 0:
+                    TablaSeries[4][0] += 1
+                elif ParesRecurrencias[i][j+1] < 0.4  and ParesRecurrencias[i][j+1]>= 0.2:
+                    TablaSeries[4][1] += 1
+                elif ParesRecurrencias[i][j+1] < 0.6  and ParesRecurrencias[i][j+1]>= 0.4:
+                    TablaSeries[4][2] += 1
+                elif ParesRecurrencias[i][j+1] < 0.8  and ParesRecurrencias[i][j+1]>= 0.6:
+                    TablaSeries[4][3] += 1
+                elif ParesRecurrencias[i][j+1] < 1  and ParesRecurrencias[i][j+1]>= 0.8:
+                    TablaSeries[4][4] += 1
+
 #def pruebaSeries(recurrencias):
+
 
 
 # /////////// PRUEBAS ////////////
@@ -108,3 +174,7 @@ array2 = [0.08, 0.09, 0.23, 0.29, 0.42, 0.55, 0.58, 0.72, 0.89, 0.91,
 """print(MapearPares(array1))
 print(len(MapearPares(array1)))
 """
+"""print(MapearPares(array1))
+print(UbicarPares(MapearPares(array1)))
+
+print(TablaSeries)"""
