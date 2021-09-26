@@ -1,5 +1,5 @@
 import Pruebas_uniformidad as Prueba
-
+import random
 Tabla = [0,0,0,0,0,0,0,0,0,0]
 datosGenerados = list()
 recurrencias = list()
@@ -76,6 +76,14 @@ def generadorestmin(Datosrequeridos):
         datosGenerados.append(res)
         recurrencias.append(res/m)
         EvaluarRecurrencia(res,m)
+def generadorPython(Datosrequeridos):
+    global n
+    n = Datosrequeridos
+    for i in range(Datosrequeridos):
+        res = random.randint(1,500)
+        datosGenerados.append(res)
+        recurrencias.append(res/500)
+        EvaluarRecurrencia(res,500)
 
 def HallarPeriodo():
     Periodo = datosGenerados.index(datosGenerados[0],1) + 1
