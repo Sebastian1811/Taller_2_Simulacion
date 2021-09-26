@@ -93,5 +93,5 @@ def VerDatosGenerados(datos):
     for i in range(len(datos)):
         print(datos[i])
 
-generadorlincong(10)
-VerDatosGenerados(recurrencias)
+#generadorlincong(10)
+#VerDatosGenerados(recurrencias)
