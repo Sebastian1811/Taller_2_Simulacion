@@ -7,6 +7,13 @@ TablaSeries = [
 [0,0,0,0,0],
 [0,0,0,0,0]
 ]
+TablaSeriesCalc = [
+[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,0,0,0],
+[0,0,0,0,0]
+]
 def ContarCorridas(recurrencias ):
     Corridas = 0
     ValCorrida = 0
@@ -153,6 +160,14 @@ def UbicarPares(ParesRecurrencias):
                     TablaSeries[4][3] += 1
                 elif ParesRecurrencias[i][j+1] < 1  and ParesRecurrencias[i][j+1]>= 0.8:
                     TablaSeries[4][4] += 1
+def CalcularChi(TablaFrecuencia,datosGenerados):
+    FE = (datosGenerados/2) / 25
+    print(FE)
+    for i in range(len(TablaFrecuencia)):
+        for j in range(len(TablaFrecuencia)):
+            numerador = (FE - TablaSeries[i][j])**2
+            TablaSeriesCalc[i][j] = numerador / FE
+
 
 #def pruebaSeries(recurrencias):
 
@@ -174,7 +189,8 @@ array2 = [0.08, 0.09, 0.23, 0.29, 0.42, 0.55, 0.58, 0.72, 0.89, 0.91,
 """print(MapearPares(array1))
 print(len(MapearPares(array1)))
 """
-"""print(MapearPares(array1))
-print(UbicarPares(MapearPares(array1)))
 
-print(TablaSeries)"""
+UbicarPares(MapearPares(array1))
+print(TablaSeries)
+CalcularChi(TablaSeries,40)
+print(TablaSeriesCalc)
