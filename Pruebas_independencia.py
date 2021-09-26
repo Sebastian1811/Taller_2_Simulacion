@@ -45,6 +45,8 @@ def PruebaCorridas(recurrencias,N):
     numerador = Corridas - Varianza
     denominador = math.sqrt(Media)
     Zobs =  round(numerador / denominador,3)
+    mostrarCorridas(recurrencias,"Secuencia")
+    mostrarCorridas(corridas,"Comportamiento de crecimiento-decrecimiento")
     if Zobs < Z and Zobs > Zo:
         hipotesis = 1
     if hipotesis:
@@ -81,7 +83,5 @@ array2 = [0.08, 0.09, 0.23, 0.29, 0.42, 0.55, 0.58, 0.72, 0.89, 0.91,
 0.11, 0.16, 0.18, 0.31, 0.41, 0.53, 0.71, 0.73, 0.74, 0.84,
 0.01, 0.09, 0.30, 0.32, 0.45, 0.47, 0.69, 0.74, 0.91, 0.95,
 0.12, 0.13, 0.29, 0.36, 0.38, 0.54, 0.68, 0.86, 0.88, 0.91]
-PruebaCorridas(array2,40)
 PruebaCorridas(array1,40)
-mostrarCorridas(array2,"Secuencia")
-mostrarCorridas(corridas,"Comportamiento de crecimiento-decrecimiento")"""
+#PruebaCorridas(array1,40)"""
