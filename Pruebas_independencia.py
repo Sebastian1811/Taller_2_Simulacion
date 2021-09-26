@@ -202,8 +202,3 @@ array2 = [0.08, 0.09, 0.23, 0.29, 0.42, 0.55, 0.58, 0.72, 0.89, 0.91,
 """print(MapearPares(array1))
 print(len(MapearPares(array1)))
 """
-
-UbicarPares(MapearPares(array1))
-
-CalcularChi(TablaSeries,40)
-pruebaSeries()
