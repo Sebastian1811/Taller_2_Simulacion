@@ -71,9 +71,8 @@ def probar_generadores():
         elif Puntero_Interno == 3:
             break
 
-
-def Prubas_Uniformidad_independencia():
-    while True:
+def menuUniformidad():
+    while 1:
         print("Se corre con 1000 datos generados y con 9 grados de libertad")
         print("############################# Bienvenido al menu de pruebas de uniformidad ###############################")
         print("\n")
@@ -85,6 +84,16 @@ def Prubas_Uniformidad_independencia():
         while (Puntero_Interno > 3 or Puntero_Interno < 1):
             Puntero_Interno = int(input("Eliga una opcion:"))
         if Puntero_Interno == 1:
+            Prubas_Uniformidad_independencia(1)
+        if Puntero_Interno == 2:
+            Prubas_Uniformidad_independencia(2)
+        if Puntero_Interno == 3:
+            break
+
+def Prubas_Uniformidad_independencia(Puntero_Interno):
+
+    if Puntero_Interno == 1:
+        while 1:
             print("######################## Bienvenido al menu del generador lineal congruente ####################################")
             print("1.Prueba de x2")
             print("2.Prueba kolmogorov")
@@ -93,9 +102,10 @@ def Prubas_Uniformidad_independencia():
             Puntero_Interno2 = int(input("Eliga una opcion:"))
             while (Puntero_Interno2 > 3 or Puntero_Interno2 < 1):
                 Puntero_Interno2 = int(input("Eliga una opcion:"))
-            while 1:
-                if Puntero_Interno2 == 1:
-                    #Prueba del chi cuadrado aqui
+
+            if Puntero_Interno2 == 1:
+                #Prueba del chi cuadrado aqui
+                while 1:
                     print("\n")
                     print("/////////PRUEBA DE chi cuadrado////////////////")
                     print("\n")
@@ -134,8 +144,9 @@ def Prubas_Uniformidad_independencia():
                                 break
                     elif Puntero_Interno3 == 2:
                         break
-                elif Puntero_Interno2 == 2:
-                    #Prueba de kolmogorov aqui
+            elif Puntero_Interno2 == 2:
+                #Prueba de kolmogorov aqui
+                while 1:
                     print("\n")
                     print("/////////PRUEBA DE KOLMOGOROV////////////////")
                     print("\n")
@@ -174,9 +185,10 @@ def Prubas_Uniformidad_independencia():
                                 break
                     elif Puntero_Interno3 == 2:
                         break
-                elif Puntero_Interno2 == 3:
-                    break
-        elif Puntero_Interno == 2:
+            elif Puntero_Interno2 == 3:
+                break
+    elif Puntero_Interno == 2:
+        while 1:
             print("######################## Bienvenido al menu del generador Estandar minimo ####################################")
             print("1.Prueba de x2")
             print("2.Prueba kolmogorov")
@@ -185,9 +197,10 @@ def Prubas_Uniformidad_independencia():
             Puntero_Interno2 = int(input("Eliga una opcion:"))
             while (Puntero_Interno2 > 3 or Puntero_Interno2 < 1):
                 Puntero_Interno2 = int(input("Eliga una opcion:"))
-            while 1:
-                if Puntero_Interno2 == 1:
-                    #Prueba del chi cuadrado aqui
+
+            if Puntero_Interno2 == 1:
+                #Prueba del chi cuadrado aqui
+                while 1:
                     print("\n")
                     print("/////////PRUEBA DE chi cuadrado////////////////")
                     print("\n")
@@ -226,8 +239,9 @@ def Prubas_Uniformidad_independencia():
                                 break
                     elif Puntero_Interno3 == 2:
                         break
-                elif Puntero_Interno2 == 2:
-                    #Prueba de kolmogorov aqui
+            elif Puntero_Interno2 == 2:
+                #Prueba de kolmogorov aqui
+                while 1:
                     print("\n")
                     print("/////////PRUEBA DE KOLMOGOROV////////////////")
                     print("\n")
@@ -266,11 +280,8 @@ def Prubas_Uniformidad_independencia():
                                 break
                     elif Puntero_Interno3 == 2:
                         break
-                elif Puntero_Interno2 == 3:
-                    break
-        elif  Puntero_Interno == 3:
-            break
-
+            elif Puntero_Interno2 == 3:
+                break
 
 
 
@@ -290,7 +301,8 @@ while contador == True:
     if Puntero_Menu == 1:
         probar_generadores()
     elif Puntero_Menu == 2:
-        Prubas_Uniformidad_independencia()
+        menuUniformidad()
+        #Prubas_Uniformidad_independencia()
     else:
         break
 """
