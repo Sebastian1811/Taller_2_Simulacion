@@ -27,6 +27,7 @@ while contador == True:
         while(Puntero_Interno > 2 or Puntero_Interno < 1):
             Puntero_Interno = int(input("Pon una opcion valida:"))
         if Puntero_Interno == 1:
+            #generadorPython(1000)
             generadorlincong(1000)
             prueba.PruebaChiCuadrado(returnTabla(),returnN())
             ReiniciarArreglos(returnTabla())
