@@ -1,30 +1,42 @@
 import math
+corridas = list()
 def ContarCorridas(recurrencias ):
     Corridas = 0
     ValCorrida = 0
     pos = 0
     neg = 0
+    lenplus = 0
+    lenneg= 0
     for i in range(len(recurrencias)-1):
         if i == 0:
+            corridas.append("*")
             if recurrencias[i] > recurrencias[i+1]:
                 pos = 1
-            else:
+                corridas.append("-")
+            elif recurrencias[i] < recurrencias[i+1]:
                 neg = 1
+                corridas.append("+")
             ValCorrida = recurrencias[i+1]
         elif pos and recurrencias[i] < recurrencias[i+1]:
             ValCorrida = recurrencias[i+1]
+            corridas.append("+")
         elif neg and recurrencias[i] > recurrencias[i+1] :
             ValCorrida = recurrencias[i+1]
+            corridas.append("-")
         elif pos and recurrencias[i] > recurrencias[i+1] :
             ValCorrida = recurrencias[i+1]
             pos = 0
             neg = 1
             Corridas+=1
+            corridas.append("-")
         elif neg and recurrencias[i] < recurrencias[i+1]:
             ValCorrida = recurrencias[i+1]
             pos = 1
             neg = 0
             Corridas+=1
+            corridas.append("+")
+    print("len+ es: ",lenplus)
+    print("len- es: ",lenneg)
     return Corridas
 
 def PruebaCorridas(recurrencias,N):
@@ -41,10 +53,24 @@ def PruebaCorridas(recurrencias,N):
         hipotesis = 1
     if hipotesis:
         print("No hay evidencia para rechar la hipotesis de independencia")
-        print(Zo,"<",Zob,">",Z)
+        print(Zo,"<",Zobs,">",Z)
     else:
         print("Se rechaza la hipotesis de independencia")
         print(Zobs, " Esta fuera del intervalo ", "[",Zo," , ",Z," ]")
+
+def mostrarCorridas(corridas):
+    contador = 0
+    print("")
+    print("////////////////// Grafica corridas //////////////////")
+    print("")
+    for i in range(int(len(corridas)/10)):
+        for i in range(10):
+            if contador < len(corridas):
+                print(corridas[contador]," ",end=" ")
+                contador+=1
+        print("")
+    print("")
+    print("////////////////////////////////////////////////////")
 
 """PruebaCorridas([0.08, 0.09, 0.23, 0.29, 0.42, 0.55, 0.58, 0.72, 0.89, 0.91,
 0.11, 0.16, 0.18, 0.31, 0.41, 0.53, 0.71, 0.73, 0.74, 0.84,
@@ -55,3 +81,5 @@ def PruebaCorridas(recurrencias,N):
 0.18, 0.01, 0.95, 0.69, 0.18, 0.47, 0.23, 0.32, 0.82, 0.53,
 0.31, 0.42, 0.73, 0.04, 0.83, 0.45, 0.13, 0.57, 0.63, 0.29
 ],40)"""
+
+#mostrarCorridas(corridas)
