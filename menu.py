@@ -26,10 +26,30 @@ def probar_generadores():
                 while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
                     Puntero_Interno2 = int(input("Eliga una opcion:"))
                 if Puntero_Interno2 == 1:
-                    print("atrapaaadaas")
+                    #Mostrar recurrencia lc
+                    print("Recurrencia lineal congruente")
                     break
                 elif Puntero_Interno2 == 2:
                     break
+            elif Puntero_Interno == 2:
+                print("######################## Bienvenido al menu del generador de estandar minimo ####################################")
+                print("1.Mostrar recurrencia")
+                print("2.Volver")
+                print("############################################################")
+                Puntero_Interno2 = int(input("Eliga una opcion:"))
+                while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
+                    Puntero_Interno2 = int(input("Eliga una opcion:"))
+                if Puntero_Interno2 == 1:
+                    #Mostrar recurrencia em
+                    print("Mostrar recurrencia del estandar minimo")
+                    break
+                elif Puntero_Interno2 == 2:
+                    break
+
+
+
+
+
 while contador == True:
     print("############################ MENU ###################################")
     print("Bienvenido al menu de las pruebas de independencia y uniformidad")
