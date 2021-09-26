@@ -11,12 +11,17 @@ def probar_generadores():
         print("1.Generador lineal congruente")
         print("2.Generador estandar minimo")
         print("3.Volver")
+        print("")
         print("############################################################")
         Puntero_Interno = int(input("Eliga una opcion:"))
         while (Puntero_Interno > 3 or Puntero_Interno < 1):
             Puntero_Interno = int(input("Eliga una opcion:"))
         if Puntero_Interno == 1:
-            print("######################## Bienvenido al menu del generador lineal congruente ####################################")
+            print("######################## Bienvenido al  generador lineal congruente ####################################")
+            print("")
+            datos = int(input("ingrese los datos que desea generar: "))
+            generadorlincong(datos)
+            VerDatosGenerados(returnDatos())
             print("1.Mostrar recurrencia")
             print("2.Volver")
             print("############################################################")
@@ -27,13 +32,25 @@ def probar_generadores():
                 if Puntero_Interno2 == 1:
                     #Mostrar recurrencia lc
                     print("Recurrencia lineal congruente")
+                    VerDatosGenerados(returnRecurrrencias())
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
                     break
                 elif Puntero_Interno2 == 2:
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
                     break
         elif Puntero_Interno == 2:
-            print("######################## Bienvenido al menu del generador de estandar minimo ####################################")
+            print("######################## Bienvenido al generador de estandar minimo ####################################")
+            print("")
+            datos = int(input("ingrese los datos que desea generar: "))
+            print("")
+            generadorestmin(datos)
+            VerDatosGenerados(returnDatos())
+            print("")
             print("1.Mostrar recurrencia")
             print("2.Volver")
+            print("")
             print("############################################################")
             Puntero_Interno2 = int(input("Eliga una opcion:"))
             while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
@@ -41,9 +58,15 @@ def probar_generadores():
             while 1:
                 if Puntero_Interno2 == 1:
                     #Mostrar recurrencia em
+                    print("")
                     print("Mostrar recurrencia del estandar minimo")
+                    VerDatosGenerados(returnRecurrrencias())
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
                     break
                 elif Puntero_Interno2 == 2:
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
                     break
         elif Puntero_Interno == 3:
             break
@@ -150,8 +173,8 @@ def Prubas_Uniformidad_independencia():
                             elif Puntero_Interno4 == 4:
                                 break
                     elif Puntero_Interno3 == 2:
-                        break     
-                elif Puntero_Interno2 == 3: 
+                        break
+                elif Puntero_Interno2 == 3:
                     break
         elif Puntero_Interno == 2:
             print("######################## Bienvenido al menu del generador Estandar minimo ####################################")
@@ -242,13 +265,13 @@ def Prubas_Uniformidad_independencia():
                             elif Puntero_Interno4 == 4:
                                 break
                     elif Puntero_Interno3 == 2:
-                        break     
-                elif Puntero_Interno2 == 3: 
+                        break
+                elif Puntero_Interno2 == 3:
                     break
         elif  Puntero_Interno == 3:
-            break        
-            
-        
+            break
+
+
 
 
 
