@@ -32,8 +32,6 @@ def probar_generadores():
                     break
 while contador == True:
 
-
-
     print("############################ MENU ###################################")
     print("Bienvenido al menu de las pruebas de independencia y uniformidad")
     print("\n")
