@@ -162,15 +162,28 @@ def UbicarPares(ParesRecurrencias):
                     TablaSeries[4][4] += 1
 def CalcularChi(TablaFrecuencia,datosGenerados):
     FE = (datosGenerados/2) / 25
-    print(FE)
     for i in range(len(TablaFrecuencia)):
         for j in range(len(TablaFrecuencia)):
             numerador = (FE - TablaSeries[i][j])**2
             TablaSeriesCalc[i][j] = numerador / FE
 
 
-#def pruebaSeries(recurrencias):
-
+def pruebaSeries():
+    Xcritico = 36.42
+    Xcalc = 0
+    for i in range(len(TablaSeriesCalc)):
+        for j in range(len(TablaSeriesCalc)):
+            Xcalc += TablaSeriesCalc[i][j]
+    if Xcalc <= Xcritico:
+        print( "Como Xcalc"+ " <= "+ "X2crit SE ACEPTA!!! la hipotesis de que los datos tienen distribucion uniforme bidimensional")
+        print("")
+        print(round(Xcalc,3)," <= ",round(Xcritico,3))
+        print("")
+    else:
+        print( "Como Xcalc "+ "<="+ " X2crit NO SE ACEPTA!!! la hipotesis de que los datos tienen distribucion uniforme bidimensional")
+        print("")
+        print(round(Xcalc,3)," > ",round(Xcritico,3))
+        print("")
 
 
 # /////////// PRUEBAS ////////////
@@ -191,6 +204,6 @@ print(len(MapearPares(array1)))
 """
 
 UbicarPares(MapearPares(array1))
-print(TablaSeries)
+
 CalcularChi(TablaSeries,40)
-print(TablaSeriesCalc)
+pruebaSeries()
