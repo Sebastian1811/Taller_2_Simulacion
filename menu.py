@@ -270,5 +270,5 @@ while contador == True:
         Prubas_Uniformidad_independencia()
     else:
         break
-else:
     print("##################### FIN DEL PROGRAMA ##############################")
+
