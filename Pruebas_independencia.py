@@ -5,8 +5,6 @@ def ContarCorridas(recurrencias ):
     ValCorrida = 0
     pos = 0
     neg = 0
-    lenplus = 0
-    lenneg= 0
     for i in range(len(recurrencias)-1):
         if i == 0:
             corridas.append("*")
@@ -35,8 +33,6 @@ def ContarCorridas(recurrencias ):
             neg = 0
             Corridas+=1
             corridas.append("+")
-    print("len+ es: ",lenplus)
-    print("len- es: ",lenneg)
     return Corridas
 
 def PruebaCorridas(recurrencias,N):
