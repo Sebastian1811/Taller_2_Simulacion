@@ -270,34 +270,5 @@ while contador == True:
         Prubas_Uniformidad_independencia()
     else:
         break
-"""
-    elif Puntero_Menu == 2:
-        print("Usted selecciono el generador de estandar minimo con las pruebas de uniformidad")
-        print("1.Prueba del chi cuadrado")
-        print("2.prueba de kolmogorov")
-        Puntero_Interno = int(input("Eliga una opcion:"))
-        while(Puntero_Interno > 2 or Puntero_Interno < 1):
-            Puntero_Interno = int(input("Pon una opcion valida:"))
-        if Puntero_Interno == 1:
-            generadorestmin()
-            prueba.PruebaChiCuadrado(returnTabla(),returnN())
-            ReiniciarTabla()
-        elif Puntero_Interno ==2:
-            generadorestmin()
-            prueba.PruebaKolmogorov(returnTabla(),returnN())
-            ReiniciarTabla()
-        print("Desea continuar?")
-        print("Si?: presione 1")
-        print("No?: presione 2")
-        Continuar = int(input("Digite una de las 2 opciones:"))
-        while(Continuar > 2 or Continuar < 1):
-            Continuar = int(input("Digite una de las 2 opciones:"))
-        if Continuar == 1:
-            print("Reinicio")
-        else:
-            contador = False
-    elif Puntero_Menu == 3:
-        print("")
-    else:
-        print("")
-"""
+else:
+    print("##################### FIN DEL PROGRAMA ##############################")
