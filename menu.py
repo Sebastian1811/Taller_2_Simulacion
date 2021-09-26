@@ -73,6 +73,9 @@ def Prubas_Uniformidad_independencia():
             while 1:
                 if Puntero_Interno2 == 1:
                     #Prueba del chi cuadrado aqui
+                    print("\n")
+                    print("/////////PRUEBA DE chi cuadrado////////////////")
+                    print("\n")
                     print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
                     print("Que desea hacer ahora?")
                     print("1.Pruebas de Independencia")
@@ -109,8 +112,45 @@ def Prubas_Uniformidad_independencia():
                     elif Puntero_Interno3 == 2:
                         break
                 elif Puntero_Interno2 == 2:
-                    print("Kolmogorov") 
-                    break 
+                    #Prueba de kolmogorov
+                    print("\n")
+                    print("/////////PRUEBA DE KOLMOGOROV////////////////")
+                    print("\n")
+                    print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
+                    print("Que desea hacer ahora?")
+                    print("1.Pruebas de Independencia")
+                    print("2.volver")
+                    print("######################## ############################################## ####################################")
+                    Puntero_Interno3 = int(input("Escoga una opcion:"))
+                    while (Puntero_Interno3 > 2 or Puntero_Interno3 < 1 ):
+                        Puntero_Interno3 = int(input("Escoga una opcion:"))
+                    if Puntero_Interno3 == 1:
+                        print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
+                        print("1.Prueba de corrida")
+                        print("2.Prueba de serie")
+                        print("3.Prueba de poker")
+                        print("4.Volver")
+                        print("##############################################################################################################")
+                        Puntero_Interno4 = int(input("eliga una opcion:"))
+                        while (Puntero_Interno4 > 4 or Puntero_Interno4 < 1 ):
+                            Puntero_Interno4 = int(input("Escoga una opcion:"))
+                        while 1:
+                            if Puntero_Interno4 == 1:
+                                #Mostrar Prueba de corrida
+                                print("Mostrar prueba de corrida")
+                                break
+                            elif Puntero_Interno4 == 2:
+                                #Mostrar prueba de serie
+                                print("Prueba de serie")
+                                break
+                            elif  Puntero_Interno4 == 3:
+                                #Mostrar prueba de poker
+                                print("Prueba de poker")
+                                break
+                            elif Puntero_Interno4 == 4:
+                                break
+                    elif Puntero_Interno3 == 2:
+                        break     
                 elif Puntero_Interno2 == 3: 
                     break
         elif Puntero_Interno == 2:
@@ -128,8 +168,7 @@ while contador == True:
     print("\n")
     print("1.Probar generadores")
     print("2.Pruebas de uniformidad e independencia")
-    print("3.Generador lineal congruente con pruebas de independencia")
-    print("4.Generador de estandar minimo con pruebas de independencia")
+    print("3.Salir")
     print("\n")
 
     Puntero_Menu = int(input("Eliga una opcion:"))
@@ -139,6 +178,8 @@ while contador == True:
         probar_generadores()
     elif Puntero_Menu == 2:
         Prubas_Uniformidad_independencia()
+    else:
+        break
 """
     elif Puntero_Menu == 2:
         print("Usted selecciono el generador de estandar minimo con las pruebas de uniformidad")
