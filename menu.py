@@ -36,7 +36,7 @@ def probar_generadores():
             print("######################## Bienvenido al menu del generador de estandar minimo ####################################")
             print("1.Mostrar recurrencia")
             print("2.Volver")
-            print("###################### Hola, este es un cambio hecho por D ######################################")
+            print("############################################################")
             Puntero_Interno2 = int(input("Eliga una opcion:"))
             while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
                 Puntero_Interno2 = int(input("Eliga una opcion:"))
