@@ -1,5 +1,6 @@
 import Pruebas_uniformidad as Prueba
 import random
+from decimal import *
 Tabla = [0,0,0,0,0,0,0,0,0,0]
 datosGenerados = list()
 recurrencias = list()
@@ -47,14 +48,14 @@ def generadorlincong(Datosrequeridos):
     print()
     #print(Xo)
     datosGenerados.append(Xo)
-    recurrencias.append(Xo/m)
+    recurrencias.append(round(Xo/m,3))
     res = (a * Xo + c) % m
     EvaluarRecurrencia(res,m)
     #print(res)
     for i in range(n-1):
         res = (a * res + c) % m
         datosGenerados.append(res)
-        recurrencias.append(res/m)
+        recurrencias.append(round(res/m,3))
         EvaluarRecurrencia(res,m)
         #print(res)
 
@@ -68,13 +69,13 @@ def generadorestmin(Datosrequeridos):
     #print(Xo)
     res = (a * Xo) % m
     datosGenerados.append(Xo)
-    recurrencias.append(Xo/m)
+    recurrencias.append(round(Xo/m,3))
     EvaluarRecurrencia(res,m)
     print(res)
     for i in range(n-1):
         res = (a * res) % m
         datosGenerados.append(res)
-        recurrencias.append(res/m)
+        recurrencias.append(round(res/m,3))
         EvaluarRecurrencia(res,m)
 def generadorPython(Datosrequeridos):
     global n
@@ -91,3 +92,6 @@ def HallarPeriodo():
 def VerDatosGenerados(datos):
     for i in range(len(datos)):
         print(datos[i])
+
+generadorlincong(10)
+VerDatosGenerados(recurrencias)
