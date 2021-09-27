@@ -73,7 +73,7 @@ def probar_generadores():
                     ReiniciarListas(returnRecurrrencias())
                     ReiniciarListas(returnDatos())
                     break
-        if Puntero_Interno == 3:
+        elif Puntero_Interno == 3:
             system("cls")
             print("######################## Bienvenido al  generador Python ####################################")
             print("")
