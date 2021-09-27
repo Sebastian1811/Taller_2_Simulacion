@@ -1,3 +1,3 @@
-import menu.py as menu
+import menu as menu
 
 menu.menuPrincipal()
