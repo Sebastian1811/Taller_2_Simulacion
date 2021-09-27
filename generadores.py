@@ -1,9 +1,9 @@
 import Pruebas_uniformidad as Prueba
 import random
 from decimal import *
-Tabla = [0,0,0,0,0,0,0,0,0,0]
-datosGenerados = list()
-recurrencias = list()
+Tabla = [0,0,0,0,0,0,0,0,0,0] #esta es la frecuencia dentro de los intervalos
+datosGenerados = list() # datos generados
+recurrencias = list() # recurrencias de los datos
 n = 0
 def EvaluarRecurrencia(Xn,m):
     Rn = Xn/m
@@ -31,6 +31,11 @@ def returnTabla():
     return Tabla
 def returnN():
     return n
+def returnRecurrrencias():
+    return recurrencias
+def returnDatos():
+    return datosGenerados
+
 def ReiniciarArreglos(Arreglo):
     for i in range(len(Arreglo)):
         Arreglo[i] = 0
@@ -71,7 +76,7 @@ def generadorestmin(Datosrequeridos):
     datosGenerados.append(Xo)
     recurrencias.append(round(Xo/m,3))
     EvaluarRecurrencia(res,m)
-    print(res)
+
     for i in range(n-1):
         res = (a * res) % m
         datosGenerados.append(res)
@@ -93,5 +98,5 @@ def VerDatosGenerados(datos):
     for i in range(len(datos)):
         print(datos[i])
 
-#generadorlincong(10)
-#VerDatosGenerados(recurrencias)
+"""generadorlincong(10)
+VerDatosGenerados(datosGenerados)"""

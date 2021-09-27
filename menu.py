@@ -10,13 +10,19 @@ def probar_generadores():
         print("")
         print("1.Generador lineal congruente")
         print("2.Generador estandar minimo")
+        print("generador de python")
         print("3.Volver")
+        print("")
         print("############################################################")
         Puntero_Interno = int(input("Eliga una opcion:"))
         while (Puntero_Interno > 3 or Puntero_Interno < 1):
             Puntero_Interno = int(input("Eliga una opcion:"))
         if Puntero_Interno == 1:
-            print("######################## Bienvenido al menu del generador lineal congruente ####################################")
+            print("######################## Bienvenido al  generador lineal congruente ####################################")
+            print("")
+            datos = int(input("ingrese los datos que desea generar: "))
+            generadorlincong(datos)
+            VerDatosGenerados(returnDatos())
             print("1.Mostrar recurrencia")
             print("2.Volver")
             print("############################################################")
@@ -27,13 +33,25 @@ def probar_generadores():
                 if Puntero_Interno2 == 1:
                     #Mostrar recurrencia lc
                     print("Recurrencia lineal congruente")
+                    VerDatosGenerados(returnRecurrrencias())
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
                     break
                 elif Puntero_Interno2 == 2:
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
                     break
         elif Puntero_Interno == 2:
-            print("######################## Bienvenido al menu del generador de estandar minimo ####################################")
+            print("######################## Bienvenido al generador de estandar minimo ####################################")
+            print("")
+            datos = int(input("ingrese los datos que desea generar: "))
+            print("")
+            generadorestmin(datos)
+            VerDatosGenerados(returnDatos())
+            print("")
             print("1.Mostrar recurrencia")
             print("2.Volver")
+            print("")
             print("############################################################")
             Puntero_Interno2 = int(input("Eliga una opcion:"))
             while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
@@ -41,16 +59,21 @@ def probar_generadores():
             while 1:
                 if Puntero_Interno2 == 1:
                     #Mostrar recurrencia em
+                    print("")
                     print("Mostrar recurrencia del estandar minimo")
+                    VerDatosGenerados(returnRecurrrencias())
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
                     break
                 elif Puntero_Interno2 == 2:
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
                     break
         elif Puntero_Interno == 3:
             break
 
-
-def Prubas_Uniformidad_independencia():
-    while True:
+def menuUniformidad():
+    while 1:
         print("Se corre con 1000 datos generados y con 9 grados de libertad")
         print("############################# Bienvenido al menu de pruebas de uniformidad ###############################")
         print("\n")
@@ -62,6 +85,16 @@ def Prubas_Uniformidad_independencia():
         while (Puntero_Interno > 3 or Puntero_Interno < 1):
             Puntero_Interno = int(input("Eliga una opcion:"))
         if Puntero_Interno == 1:
+            Prubas_Uniformidad_independencia(1)
+        if Puntero_Interno == 2:
+            Prubas_Uniformidad_independencia(2)
+        if Puntero_Interno == 3:
+            break
+
+def Prubas_Uniformidad_independencia(Puntero_Interno):
+
+    if Puntero_Interno == 1:
+        while 1:
             print("######################## Bienvenido al menu del generador lineal congruente ####################################")
             print("1.Prueba de x2")
             print("2.Prueba kolmogorov")
@@ -70,11 +103,14 @@ def Prubas_Uniformidad_independencia():
             Puntero_Interno2 = int(input("Eliga una opcion:"))
             while (Puntero_Interno2 > 3 or Puntero_Interno2 < 1):
                 Puntero_Interno2 = int(input("Eliga una opcion:"))
-            while 1:
-                if Puntero_Interno2 == 1:
-                    #Prueba del chi cuadrado aqui
+
+            if Puntero_Interno2 == 1:
+                #Prueba del chi cuadrado aqui
+                while 1:
                     print("\n")
-                    print("/////////PRUEBA DE chi cuadrado////////////////")
+                    print("/////////PRUEBA DE CHI CUADRADO ////////////////")
+                    #generadorlincong(1000)
+                    prueba.PruebaChiCuadrado(1)
                     print("\n")
                     print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
                     print("Que desea hacer ahora?")
@@ -98,23 +134,40 @@ def Prubas_Uniformidad_independencia():
                             if Puntero_Interno4 == 1:
                                 #Mostrar Prueba de corrida aqui
                                 print("Mostrar prueba de corrida")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 2:
                                 #Mostrar prueba de serie aqui
                                 print("Prueba de serie")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
                                 #Mostrar prueba de poker aqui
                                 print("Prueba de poker")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                     elif Puntero_Interno3 == 2:
+                        ReiniciarArreglos(returnTabla())
+                        ReiniciarListas(returnDatos())
+                        ReiniciarListas(returnRecurrrencias())
                         break
-                elif Puntero_Interno2 == 2:
-                    #Prueba de kolmogorov aqui
+            elif Puntero_Interno2 == 2:
+                #Prueba de kolmogorov aqui
+                while 1:
                     print("\n")
                     print("/////////PRUEBA DE KOLMOGOROV////////////////")
+                    prueba.PruebaKolmogorov(1)
                     print("\n")
                     print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
                     print("Que desea hacer ahora?")
@@ -138,22 +191,38 @@ def Prubas_Uniformidad_independencia():
                             if Puntero_Interno4 == 1:
                                 #Mostrar Prueba de corrida aqui
                                 print("Mostrar prueba de corrida")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 2:
                                 #Mostrar prueba de serie aqui
                                 print("Prueba de serie")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
                                 #Mostrar prueba de poker aqui
                                 print("Prueba de poker")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                     elif Puntero_Interno3 == 2:
-                        break     
-                elif Puntero_Interno2 == 3: 
-                    break
-        elif Puntero_Interno == 2:
+                        ReiniciarArreglos(returnTabla())
+                        ReiniciarListas(returnDatos())
+                        ReiniciarListas(returnRecurrrencias())
+                        break
+            elif Puntero_Interno2 == 3:
+                break
+    elif Puntero_Interno == 2:
+        while 1:
             print("######################## Bienvenido al menu del generador Estandar minimo ####################################")
             print("1.Prueba de x2")
             print("2.Prueba kolmogorov")
@@ -162,11 +231,13 @@ def Prubas_Uniformidad_independencia():
             Puntero_Interno2 = int(input("Eliga una opcion:"))
             while (Puntero_Interno2 > 3 or Puntero_Interno2 < 1):
                 Puntero_Interno2 = int(input("Eliga una opcion:"))
-            while 1:
-                if Puntero_Interno2 == 1:
-                    #Prueba del chi cuadrado aqui
+
+            if Puntero_Interno2 == 1:
+                #Prueba del chi cuadrado aqui
+                while 1:
                     print("\n")
                     print("/////////PRUEBA DE chi cuadrado////////////////")
+                    prueba.PruebaChiCuadrado(2)
                     print("\n")
                     print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
                     print("Que desea hacer ahora?")
@@ -190,23 +261,40 @@ def Prubas_Uniformidad_independencia():
                             if Puntero_Interno4 == 1:
                                 #Mostrar Prueba de corrida aqui
                                 print("Mostrar prueba de corrida")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 2:
                                 #Mostrar prueba de serie aqui
                                 print("Prueba de serie")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
                                 #Mostrar prueba de poker aqui
                                 print("Prueba de poker")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                     elif Puntero_Interno3 == 2:
+                        ReiniciarArreglos(returnTabla())
+                        ReiniciarListas(returnDatos())
+                        ReiniciarListas(returnRecurrrencias())
                         break
-                elif Puntero_Interno2 == 2:
-                    #Prueba de kolmogorov aqui
+            elif Puntero_Interno2 == 2:
+                #Prueba de kolmogorov aqui
+                while 1:
                     print("\n")
                     print("/////////PRUEBA DE KOLMOGOROV////////////////")
+                    prueba.PruebaKolmogorov(2)
                     print("\n")
                     print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
                     print("Que desea hacer ahora?")
@@ -230,25 +318,36 @@ def Prubas_Uniformidad_independencia():
                             if Puntero_Interno4 == 1:
                                 #Mostrar Prueba de corrida aqui
                                 print("Mostrar prueba de corrida")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 2:
                                 #Mostrar prueba de serie aui
                                 print("Prueba de serie")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
                                 #Mostrar prueba de poker aui
                                 print("Prueba de poker")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                     elif Puntero_Interno3 == 2:
-                        break     
-                elif Puntero_Interno2 == 3: 
-                    break
-        elif  Puntero_Interno == 3:
-            break        
-            
-        
+                        ReiniciarArreglos(returnTabla())
+                        ReiniciarListas(returnDatos())
+                        ReiniciarListas(returnRecurrrencias())
+                        break
+            elif Puntero_Interno2 == 3:
+                break
 
 
 
@@ -267,7 +366,8 @@ while contador == True:
     if Puntero_Menu == 1:
         probar_generadores()
     elif Puntero_Menu == 2:
-        Prubas_Uniformidad_independencia()
+        menuUniformidad()
+        #Prubas_Uniformidad_independencia()
     else:
         break
     print("##################### FIN DEL PROGRAMA ##############################")
