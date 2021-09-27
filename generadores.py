@@ -81,10 +81,10 @@ def generadorPython(Datosrequeridos):
     global n
     n = Datosrequeridos
     for i in range(Datosrequeridos):
-        res = random.randint(1,500)
+        res = random.randint(1,1000)
         datosGenerados.append(res)
-        recurrencias.append(res/500)
-        EvaluarRecurrencia(res,500)
+        recurrencias.append(res/1000)
+        EvaluarRecurrencia(res,1000)
 
 def HallarPeriodo():
     Periodo = datosGenerados.index(datosGenerados[0],1) + 1

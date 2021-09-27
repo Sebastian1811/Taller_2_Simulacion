@@ -61,12 +61,12 @@ def CalcKolmogorov(TablaFrecuencia,numerodatos):
 def PruebaKolmogorov(modo):
     GradosLibertad = 999
     datosGenerados = 1000
-        if modo ==1 :
-            ge.generadorlincong(1000)
-        elif modo == 2:
-            ge.generadorestmin(1000)
-        else:
-            ge.generadorPython(1000)   
+    if modo ==1
+        ge.generadorlincong(1000)
+    elif modo == 2:
+        ge.generadorestmin(1000)
+    else:
+        ge.generadorPython(1000)   
     TablaFrecuencia = ge.returnTabla()
     Dmcritico = 1.36 / math.sqrt(datosGenerados)
     CalcularFOA(TablaFrecuencia)
