@@ -1,10 +1,17 @@
 from decimal import *
+import  generadores as ge
 import math
 ChiCalculadoTabla = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 KolmogorovCalculado =  [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 FOA = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
-
-def PruebaChiCuadrado(TablaFrecuencia,datosGenerados):
+#"""TablaFrecuencia,datosGenerados""" parametros prueba x2
+def PruebaChiCuadrado(modo):
+    if modo ==1 :
+        ge.generadorlincong(1000)
+    else:
+        ge.generadorestmin(1000)
+    TablaFrecuencia = ge.returnTabla()
+    datosGenerados = 1000
     Xcritico = 16.92#float(input("Ingrese el chi critico: "))
     ChiCalculado(TablaFrecuencia,datosGenerados)
     DibujarTabla(TablaFrecuencia,Xcritico,datosGenerados)
@@ -44,9 +51,15 @@ def CalcKolmogorov(TablaFrecuencia,numerodatos):
     for i in range(10):
         KolmogorovCalculado[i] = abs (Rango - Decimal(Decimal(FOA[i])/numerodatos))
         Rango += Decimal(0.1)
-
-def PruebaKolmogorov(TablaFrecuencia,datosGenerados):
+#TablaFrecuencia,datosGenerados
+def PruebaKolmogorov(modo):
     GradosLibertad = 999
+    datosGenerados = 1000
+    if modo == 1:
+        ge.generadorlincong(1000)
+    else:
+        ge.generadorestmin(1000)
+    TablaFrecuencia = ge.returnTabla()
     Dmcritico = 1.36 / math.sqrt(datosGenerados)
     CalcularFOA(TablaFrecuencia)
     CalcKolmogorov(TablaFrecuencia,datosGenerados)
