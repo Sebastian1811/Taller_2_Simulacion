@@ -1,9 +1,9 @@
 import Pruebas_uniformidad as Prueba
 import random
 from decimal import *
-Tabla = [0,0,0,0,0,0,0,0,0,0]
-datosGenerados = list()
-recurrencias = list()
+Tabla = [0,0,0,0,0,0,0,0,0,0] #esta es la frecuencia dentro de los intervalos
+datosGenerados = list() # datos generados
+recurrencias = list() # recurrencias de los datos
 n = 0
 def EvaluarRecurrencia(Xn,m):
     Rn = Xn/m
@@ -76,7 +76,7 @@ def generadorestmin(Datosrequeridos):
     datosGenerados.append(Xo)
     recurrencias.append(round(Xo/m,3))
     EvaluarRecurrencia(res,m)
-    
+
     for i in range(n-1):
         res = (a * res) % m
         datosGenerados.append(res)
