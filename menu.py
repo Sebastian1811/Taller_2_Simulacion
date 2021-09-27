@@ -350,25 +350,24 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                 break
 
 
+def menuPrincipal():
+    while contador == True:
+        print("############################ MENU ###################################")
+        print("Bienvenido al menu de las pruebas de independencia y uniformidad")
+        print("\n")
+        print("1.Probar generadores")
+        print("2.Pruebas de uniformidad e independencia")
+        print("3.Salir")
+        print("\n")
 
-while contador == True:
-    print("############################ MENU ###################################")
-    print("Bienvenido al menu de las pruebas de independencia y uniformidad")
-    print("\n")
-    print("1.Probar generadores")
-    print("2.Pruebas de uniformidad e independencia")
-    print("3.Salir")
-    print("\n")
-
-    Puntero_Menu = int(input("Eliga una opcion:"))
-    while (Puntero_Menu > 4 or Puntero_Menu < 1):
-        Puntero_Menu = int(input("Eliga una numero entero entre 1 y 4 no es tan dificil:"))
-    if Puntero_Menu == 1:
-        probar_generadores()
-    elif Puntero_Menu == 2:
-        menuUniformidad()
-        #Prubas_Uniformidad_independencia()
-    else:
-        break
-    print("##################### FIN DEL PROGRAMA ##############################")
-
+        Puntero_Menu = int(input("Eliga una opcion:"))
+        while (Puntero_Menu > 4 or Puntero_Menu < 1):
+            Puntero_Menu = int(input("Eliga una numero entero entre 1 y 4 no es tan dificil:"))
+        if Puntero_Menu == 1:
+            probar_generadores()
+        elif Puntero_Menu == 2:
+            menuUniformidad()
+            #Prubas_Uniformidad_independencia()
+        else:
+            break
+        print("##################### FIN DEL PROGRAMA ##############################")
