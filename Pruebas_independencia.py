@@ -65,7 +65,7 @@ def PruebaCorridas(recurrencias,N):
         hipotesis = 1
     if hipotesis:
         print("Hay en total: ",Corridas," corridas")
-        print("No hay evidencia para rechar la hipotesis de independencia")
+        print("No hay evidencia para rechazar la hipotesis de independencia")
         print(Zo,"<",Zobs,">",Z)
     else:
         print("Hay en total: ",Corridas," corridas")
@@ -168,21 +168,23 @@ def CalcularChi(TablaFrecuencia,datosGenerados):
             TablaSeriesCalc[i][j] = numerador / FE
 
 
-def pruebaSeries():
+def pruebaSeries(recurrencias):
     Xcritico = 36.42
     Xcalc = 0
+    UbicarPares(MapearPares(recurrencias))
+    CalcularChi(TablaSeries,1000)
     for i in range(len(TablaSeriesCalc)):
         for j in range(len(TablaSeriesCalc)):
             Xcalc += TablaSeriesCalc[i][j]
     if Xcalc <= Xcritico:
         print( "Como Xcalc"+ " <= "+ "X2crit SE ACEPTA!!! la hipotesis de que los datos tienen distribucion uniforme bidimensional")
         print("")
-        print(round(Xcalc,3)," <= ",round(Xcritico,3))
+        print(Xcalc," <= ",Xcritico,3)
         print("")
     else:
         print( "Como Xcalc "+ "<="+ " X2crit NO SE ACEPTA!!! la hipotesis de que los datos tienen distribucion uniforme bidimensional")
         print("")
-        print(round(Xcalc,3)," > ",round(Xcritico,3))
+        print(Xcalc," > ",Xcritico,3)
         print("")
 
 
