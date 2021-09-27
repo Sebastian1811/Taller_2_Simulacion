@@ -1,2 +1,3 @@
-print("Gordo pedorro")
-print("modo pan activo")
+import menu.py as menu
+
+menu.menuPrincipal()
