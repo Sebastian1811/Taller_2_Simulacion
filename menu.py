@@ -226,9 +226,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
             Puntero_Interno2 = int(input("Eliga una opcion:"))
             while (Puntero_Interno2 > 3 or Puntero_Interno2 < 1):
                 Puntero_Interno2 = int(input("Eliga una opcion:"))
-
             if Puntero_Interno2 == 1:
-                #Prueba del chi cuadrado aqui
                 system("cls")
                 print("\n")
                 print("/////////PRUEBA DE chi cuadrado////////////////")
@@ -278,7 +276,6 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                         ReiniciarListas(returnRecurrrencias())
                         break
             elif Puntero_Interno2 == 2:
-                #Prueba de kolmogorov aqui
                 system("cls")
                 print("/////////PRUEBA DE KOLMOGOROV////////////////")
                 prueba.PruebaKolmogorov(2)
@@ -330,7 +327,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
             elif Puntero_Interno2 == 3:
                 system("cls")
                 break
-                
+
 def menuPrincipal():
     while contador == True:
         system("cls")
@@ -341,7 +338,6 @@ def menuPrincipal():
         print("2.Pruebas de uniformidad e independencia")
         print("3.Salir")
         print("\n")
-
         Puntero_Menu = int(input("Eliga una opcion:"))
         while (Puntero_Menu > 4 or Puntero_Menu < 1):
             Puntero_Menu = int(input("Eliga una numero entero entre 1 y 4 no es tan dificil:"))
@@ -351,7 +347,6 @@ def menuPrincipal():
         elif Puntero_Menu == 2:
             system("cls")
             menuUniformidad()
-            #Prubas_Uniformidad_independencia()
         else:
             break
     print("##################### FIN DEL PROGRAMA ##############################")
