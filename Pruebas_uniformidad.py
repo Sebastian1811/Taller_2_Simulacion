@@ -16,15 +16,19 @@ def PruebaChiCuadrado(modo):
     ChiCalculado(TablaFrecuencia,datosGenerados)
     DibujarTabla(TablaFrecuencia,Xcritico,datosGenerados)
     if sum(ChiCalculadoTabla) <= Xcritico:
+        print("")
         print("Segun la prueba de Chi cuadrado el generador es BUENO!!! en cuanto a uniformidad")
         print("ChiCalculado es: ",sum(ChiCalculadoTabla))
         print("Segun la prueba chiCuadrado: ChiCalculado <= chicritico")
         print(sum(ChiCalculadoTabla),"<=",Xcritico)
+        print("")
     else:
+        print("")
         print("Segun la prueba de Chi cuadrado el generador NO!!!!! es bueno en cuanto a uniformidad")
         print("ChiCalculado es: ",sum(ChiCalculadoTabla))
         print("Segun la prueba chiCuadrado: ChiCalculado <= chicritico")
         print(sum(ChiCalculadoTabla),">",Xcritico)
+        print("")
 
 def ChiCalculado(TablaFrecuencia,datosGenerados):
     getcontext()
@@ -66,13 +70,15 @@ def PruebaKolmogorov(modo):
     DibujarKolmogorov(TablaFrecuencia,datosGenerados)
 
     if max(KolmogorovCalculado) <= Dmcritico:
-
+        print("")
         print("Segun la prueba de Kolmogorov el generador es BUENO!!! en cuanto a uniformidad")
         print(max(KolmogorovCalculado)," <= ",Dmcritico)
+        print("")
     else:
+        print("")
         print("Segun la prueba de Kolmogorov el generador NO!!!!! es bueno en cuanto a uniformidad")
         print(min(KolmogorovCalculado)," > ",Dmcritico)
-
+        print("")
 def CalcularFOA(TablaFrecuencia):
 
     for i in range(10):
