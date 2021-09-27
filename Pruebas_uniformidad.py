@@ -8,8 +8,10 @@ FOA = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 def PruebaChiCuadrado(modo):
     if modo ==1 :
         ge.generadorlincong(1000)
-    else:
+    elif modo == 2:
         ge.generadorestmin(1000)
+    else:
+        ge.generadorPython(1000)
     TablaFrecuencia = ge.returnTabla()
     datosGenerados = 1000
     Xcritico = 16.92#float(input("Ingrese el chi critico: "))
@@ -59,10 +61,12 @@ def CalcKolmogorov(TablaFrecuencia,numerodatos):
 def PruebaKolmogorov(modo):
     GradosLibertad = 999
     datosGenerados = 1000
-    if modo == 1:
-        ge.generadorlincong(1000)
-    else:
-        ge.generadorestmin(1000)
+        if modo ==1 :
+            ge.generadorlincong(1000)
+        elif modo == 2:
+            ge.generadorestmin(1000)
+        else:
+            ge.generadorPython(1000)   
     TablaFrecuencia = ge.returnTabla()
     Dmcritico = 1.36 / math.sqrt(datosGenerados)
     CalcularFOA(TablaFrecuencia)
