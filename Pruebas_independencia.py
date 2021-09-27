@@ -66,7 +66,7 @@ def PruebaCorridas(recurrencias,N):
     if hipotesis:
         print("Hay en total: ",Corridas," corridas")
         print("No hay evidencia para rechazar la hipotesis de independencia")
-        print(Zo,"<",Zobs,">",Z)
+        print(Zo,"<",Zobs,"<",Z)
     else:
         print("Hay en total: ",Corridas," corridas")
         print("Se rechaza la hipotesis de independencia")
@@ -94,7 +94,6 @@ def MapearPares(recurrencias):
         if count < (len(recurrencias)-1):
             listaPares.append([recurrencias[count],recurrencias[count+1]])
             count+=2
-            #print(count)
     return listaPares
 
 def UbicarPares(ParesRecurrencias):
@@ -167,7 +166,6 @@ def CalcularChi(TablaFrecuencia,datosGenerados):
             numerador = (FE - TablaSeries[i][j])**2
             TablaSeriesCalc[i][j] = numerador / FE
 
-
 def pruebaSeries(recurrencias):
     Xcritico = 36.42
     Xcalc = 0
@@ -179,21 +177,19 @@ def pruebaSeries(recurrencias):
     if Xcalc <= Xcritico:
         print( "Como Xcalc"+ " <= "+ "X2crit SE ACEPTA!!! la hipotesis de que los datos tienen distribucion uniforme bidimensional")
         print("")
-        print(Xcalc," <= ",Xcritico,3)
+        print(Xcalc," <= ",Xcritico)
         print("")
     else:
-        print( "Como Xcalc "+ "<="+ " X2crit NO SE ACEPTA!!! la hipotesis de que los datos tienen distribucion uniforme bidimensional")
+        print( "Como Xcalc "+ ">"+ " X2crit NO SE ACEPTA!!! la hipotesis de que los datos tienen distribucion uniforme bidimensional")
         print("")
-        print(Xcalc," > ",Xcritico,3)
+        print(Xcalc," > ",Xcritico)
         print("")
 
-
-def calcularPoker():
+def calcularPoker(recurrencias):
     casos = [0, 0, 0]
     datos = list()
     digitos = list()
-    gen.generadorlincong(1000)
-    datos = gen.returnRecurrrencias()
+    datos = recurrencias
     for i in range(len(datos)):
         numero = str(datos[i])
         if len(numero) == 3: # Este if y el elif que sigue es para que todos los numeros tengan la misma cantidad de digitos
@@ -204,7 +200,7 @@ def calcularPoker():
         digitos = [int(i) for i in str(numeroDec)] # Separa el numero en digitos para hacer la comprobación
         # Se colocan los numeros en sus respectivos casos
         if digitos[0] == digitos[1]:
-            casos[1] 
+            casos[1]
         if digitos[0] == digitos[1] and digitos[1] == digitos[2]:
             casos[2] += 1
         elif digitos[0] != digitos[1] and digitos[0] != digitos[2] and digitos[1] != digitos[2]:
@@ -212,8 +208,8 @@ def calcularPoker():
         else: casos[1] += 1
     return casos
 
-def pruebaPoker():
-    FO = calcularPoker()
+def pruebaPoker(recurrencias):
+    FO = calcularPoker(recurrencias)
     FE = [720, 270, 10]
     Xcalc = 0
     Xcritico = 5.99
