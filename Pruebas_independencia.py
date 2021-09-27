@@ -228,21 +228,23 @@ def calcularPoker(recurrencias):
     digitos = list()
     datos = recurrencias
     for i in range(len(datos)):
-        numero = str(datos[i])
-        if len(numero) == 3: # Este if y el elif que sigue es para que todos los numeros tengan la misma cantidad de digitos
-            numero = numero + '0' + '0'
-        elif len(numero) == 4:
-            numero = numero + '0'
-        numeroDec = numero.replace('0.','') # Quita el 0. de los numeros porque no sirven para la prueba
-        digitos = [int(i) for i in str(numeroDec)] # Separa el numero en digitos para hacer la comprobación
-        # Se colocan los numeros en sus respectivos casos
-        if digitos[0] == digitos[1]:
-            casos[1]
-        if digitos[0] == digitos[1] and digitos[1] == digitos[2]:
-            casos[2] += 1
-        elif digitos[0] != digitos[1] and digitos[0] != digitos[2] and digitos[1] != digitos[2]:
-            casos[0] += 1
-        else: casos[1] += 1
+        if datos[i] < 1:
+            numero = str(datos[i])
+            if len(numero) == 3: # Este if y el elif que sigue es para que todos los numeros tengan la misma cantidad de digitos
+                numero = numero + '0' + '0'
+            elif len(numero) == 4:
+                numero = numero + '0'
+            numeroDec = numero.replace('0.','') # Quita el 0. de los numeros porque no sirven para la prueba
+            digitos = [int(i) for i in str(numeroDec)] # Separa el numero en digitos para hacer la comprobación
+            #Se colocan los numeros en sus respectivos casos
+            if digitos[0] == digitos[1]:
+                casos[1]
+            if digitos[0] == digitos[1] and digitos[1] == digitos[2]:
+                casos[2] += 1
+            elif digitos[0] != digitos[1] and digitos[0] != digitos[2] and digitos[1] != digitos[2]:
+                casos[0] += 1
+            else: casos[1] += 1
+        else: casos[2] += 1
     return casos
 
 def pruebaPoker(recurrencias):
