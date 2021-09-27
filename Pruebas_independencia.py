@@ -188,6 +188,49 @@ def pruebaSeries(recurrencias):
         print("")
 
 
+def calcularPoker():
+    casos = [0, 0, 0]
+    datos = list()
+    digitos = list()
+    gen.generadorlincong(1000)
+    datos = gen.returnRecurrrencias()
+    for i in range(len(datos)):
+        numero = str(datos[i])
+        if len(numero) == 3: # Este if y el elif que sigue es para que todos los numeros tengan la misma cantidad de digitos
+            numero = numero + '0' + '0'
+        elif len(numero) == 4:
+            numero = numero + '0'
+        numeroDec = numero.replace('0.','') # Quita el 0. de los numeros porque no sirven para la prueba
+        digitos = [int(i) for i in str(numeroDec)] # Separa el numero en digitos para hacer la comprobación
+        # Se colocan los numeros en sus respectivos casos
+        if digitos[0] == digitos[1]:
+            casos[1] 
+        if digitos[0] == digitos[1] and digitos[1] == digitos[2]:
+            casos[2] += 1
+        elif digitos[0] != digitos[1] and digitos[0] != digitos[2] and digitos[1] != digitos[2]:
+            casos[0] += 1
+        else: casos[1] += 1
+    return casos
+
+def pruebaPoker():
+    FO = calcularPoker()
+    FE = [720, 270, 10]
+    Xcalc = 0
+    Xcritico = 5.99
+    for i in range(len(FO)):
+        Xcalc += round(((FO[i]-FE[i])**2)/FE[i], 4)
+    if Xcalc <= Xcritico:
+        print("Como Xcalc" + " <= " + "Xcrit SE ACEPTA!!! la hipotesis de que los datos tienen una independencia")
+        print("")
+        print(round(Xcalc,3), " <= ",round(Xcritico,3))
+        print("")
+    else:
+        print("Como Xcalc" + " <= " + "Xcrit NO SE ACEPTA!!! la hipotesis de que los datos tienen una independencia")
+        print("")
+        print(round(Xcalc,3), " > ",round(Xcritico,3))
+        print("")
+
+
 # /////////// PRUEBAS ////////////
 array1 = [0.41, 0.68, 0.89, 0.94, 0.74, 0.91, 0.55, 0.62, 0.36, 0.27,
 0.19, 0.72, 0.75 ,0.08, 0.54, 0.02, 0.01, 0.36, 0.16, 0.28,
