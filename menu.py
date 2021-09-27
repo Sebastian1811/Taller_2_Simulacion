@@ -151,7 +151,10 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 pruebaI.pruebaSeries(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
-                                print("Prueba de poker")
+                                print("")
+                                print("///////////////////// Prueba de poker ///////////////////" )
+                                print("")
+                                pruebaI.pruebaPoker(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
                                 break
@@ -202,7 +205,10 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 pruebaI.pruebaSeries(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
-                                print("Prueba de poker")
+                                print("")
+                                print("///////////////////// Prueba de poker ///////////////////" )
+                                print("")
+                                pruebaI.pruebaPoker(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
                                 break
@@ -265,7 +271,10 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 pruebaI.pruebaSeries(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
-                                print("Prueba de poker")
+                                print("")
+                                print("///////////////////// Prueba de poker ///////////////////" )
+                                print("")
+                                pruebaI.pruebaPoker(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
                                 break
@@ -314,7 +323,10 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 pruebaI.pruebaSeries(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
-                                print("Prueba de poker")
+                                print("")
+                                print("///////////////////// Prueba de poker ///////////////////" )
+                                print("")
+                                pruebaI.pruebaPoker(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
                                 break
