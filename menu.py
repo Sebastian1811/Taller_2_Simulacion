@@ -237,6 +237,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                 while 1:
                     print("\n")
                     print("/////////PRUEBA DE chi cuadrado////////////////")
+                    prueba.PruebaChiCuadrado(2)
                     print("\n")
                     print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
                     print("Que desea hacer ahora?")
@@ -260,24 +261,40 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                             if Puntero_Interno4 == 1:
                                 #Mostrar Prueba de corrida aqui
                                 print("Mostrar prueba de corrida")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 2:
                                 #Mostrar prueba de serie aqui
                                 print("Prueba de serie")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
                                 #Mostrar prueba de poker aqui
                                 print("Prueba de poker")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                     elif Puntero_Interno3 == 2:
+                        ReiniciarArreglos(returnTabla())
+                        ReiniciarListas(returnDatos())
+                        ReiniciarListas(returnRecurrrencias())
                         break
             elif Puntero_Interno2 == 2:
                 #Prueba de kolmogorov aqui
                 while 1:
                     print("\n")
                     print("/////////PRUEBA DE KOLMOGOROV////////////////")
+                    prueba.PruebaKolmogorov(2)
                     print("\n")
                     print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
                     print("Que desea hacer ahora?")
@@ -301,22 +318,36 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                             if Puntero_Interno4 == 1:
                                 #Mostrar Prueba de corrida aqui
                                 print("Mostrar prueba de corrida")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 2:
                                 #Mostrar prueba de serie aui
                                 print("Prueba de serie")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif  Puntero_Interno4 == 3:
                                 #Mostrar prueba de poker aui
                                 print("Prueba de poker")
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                             elif Puntero_Interno4 == 4:
+                                ReiniciarArreglos(returnTabla())
+                                ReiniciarListas(returnDatos())
+                                ReiniciarListas(returnRecurrrencias())
                                 break
                     elif Puntero_Interno3 == 2:
+                        ReiniciarArreglos(returnTabla())
+                        ReiniciarListas(returnDatos())
+                        ReiniciarListas(returnRecurrrencias())
                         break
             elif Puntero_Interno2 == 3:
                 break
-
 
 
 
