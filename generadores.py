@@ -49,34 +49,29 @@ def generadorlincong(Datosrequeridos):
     m = int(input("m es: "))
     Xo = int(input("Xo es: "))
     global n
-    n = Datosrequeridos #int(input(" cuantos datos desea generar: "))
+    n = Datosrequeridos
     print()
-    #print(Xo)
     datosGenerados.append(Xo)
     recurrencias.append(round(Xo/m,3))
     res = (a * Xo + c) % m
     EvaluarRecurrencia(res,m)
-    #print(res)
     for i in range(n-1):
         res = (a * res + c) % m
         datosGenerados.append(res)
         recurrencias.append(round(res/m,3))
         EvaluarRecurrencia(res,m)
-        #print(res)
 
 def generadorestmin(Datosrequeridos):
     a = int(input("a es: "))
     m = int(input("m es: "))
     Xo = int(input("Xo es: "))
     global n
-    n = Datosrequeridos#int(input(" cuantos datos desea generar: "))
+    n = Datosrequeridos
     print()
-    #print(Xo)
     res = (a * Xo) % m
     datosGenerados.append(Xo)
     recurrencias.append(round(Xo/m,3))
     EvaluarRecurrencia(res,m)
-
     for i in range(n-1):
         res = (a * res) % m
         datosGenerados.append(res)
