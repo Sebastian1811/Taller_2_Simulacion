@@ -101,6 +101,8 @@ def probar_generadores():
                     break
         elif Puntero_Interno == 4:
             system("cls")
+            ReiniciarListas(returnRecurrrencias())
+            ReiniciarListas(returnDatos())
             break
 
 def menuUniformidad():
