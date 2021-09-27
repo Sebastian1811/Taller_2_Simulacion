@@ -170,17 +170,32 @@ def CalcularChi(TablaFrecuencia,datosGenerados):
 def DibujarSeries(TablaFrecuencia,Tablaseries):
     colum = 0
     getcontext()
-    getcontext().prec = 2
+    getcontext().prec = 1
+    print("//////////////////////////// Tabla de Frecuencia ///////////////////////////////////////////////////")
+    print()
     for i in range(len(TablaFrecuencia)):
         if i == 0:
             print("             |0 - 0.2  | 0.2 - 0.4  |  0.4 - 0.6  | 0.6 - 0.8  | 0.8 - 1  |")
         if colum + Decimal(0.2) <=1:
-            print( colum ,"-", colum+ Decimal(0.2),end ="")
+            print( colum ,"-", colum+ Decimal(0.2),"  ",end ="")
+            colum += Decimal(0.2)
+        for j in range(len(TablaFrecuencia)):
+            print("     ",TablaFrecuencia[i][j],"     ",end="")
+        print()
+    print("")
+    colum = 0
+    print("//////////////////////////// Tabla aplicando X^2 ///////////////////////////////////////////////////")
+    print()
+    for i in range(len(TablaSeries)):
+        if i == 0:
+            print("             |0 - 0.2  | 0.2 - 0.4  |  0.4 - 0.6  | 0.6 - 0.8  | 0.8 - 1  |")
+        if colum + Decimal(0.2) <=1:
+            print( colum ,"-", colum+ Decimal(0.2),"  ",end ="")
             colum += Decimal(0.2)
         for j in range(len(Tablaseries)):
-            print("       ",TablaFrecuencia[i][j],"       ",end="")
-
+            print("     ",TablaSeriesCalc[i][j],"     ",end="")
         print()
+    print()    
 def reinicarMatrix(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix)):
@@ -205,7 +220,7 @@ def pruebaSeries(recurrencias):
         print(Xcalc," > ",Xcritico)
         print("")
     reinicarMatrix(TablaSeriesCalc)
-    reinicarMatrix(TablaSeries)    
+    reinicarMatrix(TablaSeries)
 
 def calcularPoker(recurrencias):
     casos = [0, 0, 0]
