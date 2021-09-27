@@ -12,12 +12,12 @@ def probar_generadores():
         print("")
         print("1.Generador lineal congruente")
         print("2.Generador estandar minimo")
-        print("generador de python")
-        print("3.Volver")
+        print("3.Generador de python")
+        print("4.Volver")
         print("")
         print("############################################################")
         Puntero_Interno = int(input("Eliga una opcion:"))
-        while (Puntero_Interno > 3 or Puntero_Interno < 1):
+        while (Puntero_Interno > 4 or Puntero_Interno < 1):
             Puntero_Interno = int(input("Eliga una opcion:"))
         if Puntero_Interno == 1:
             system("cls")
@@ -73,7 +73,33 @@ def probar_generadores():
                     ReiniciarListas(returnRecurrrencias())
                     ReiniciarListas(returnDatos())
                     break
-        elif Puntero_Interno == 3:
+        if Puntero_Interno == 3:
+            system("cls")
+            print("######################## Bienvenido al  generador Python ####################################")
+            print("")
+            datos = int(input("ingrese los datos que desea generar: "))
+            generadorPython(datos)
+            VerDatosGenerados(returnDatos())
+            print("")
+            print("1.Mostrar recurrencia")
+            print("2.Volver")
+            print("############################################################")
+            Puntero_Interno2 = int(input("Eliga una opcion:"))
+            while (Puntero_Interno2 > 2 or Puntero_Interno2 < 1):
+                Puntero_Interno2 = int(input("Eliga una opcion:"))
+            while 1:
+                system("cls")
+                if Puntero_Interno2 == 1:
+                    print("Recurrencia lineal congruente")
+                    VerDatosGenerados(returnRecurrrencias())
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
+                    break
+                elif Puntero_Interno2 == 2:
+                    ReiniciarListas(returnRecurrrencias())
+                    ReiniciarListas(returnDatos())
+                    break
+        elif Puntero_Interno == 4:
             system("cls")
             break
 
@@ -104,7 +130,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
     if Puntero_Interno == 1:
         system("cls")
         while 1:
-            print("######################## Bienvenido al menu del generador lineal congruente ####################################")
+            print("######################## Bienvenido al menu de las pruebas del generador lineal congruente ####################################")
             print("1.Prueba de x2")
             print("2.Prueba kolmogorov")
             print("3.Volver")
@@ -128,7 +154,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                     while (Puntero_Interno3 > 2 or Puntero_Interno3 < 1 ):
                         Puntero_Interno3 = int(input("Escoga una opcion:"))
                     if Puntero_Interno3 == 1:
-                        print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
+                        print("######################## Bienvenido a las pruebas de independencia ####################################")
                         print("1.Prueba de corrida")
                         print("2.Prueba de serie")
                         print("3.Prueba de poker")
@@ -181,7 +207,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                     while (Puntero_Interno3 > 2 or Puntero_Interno3 < 1 ):
                         Puntero_Interno3 = int(input("Escoga una opcion:"))
                     if Puntero_Interno3 == 1:
-                        print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
+                        print("######################## Bienvenido a las pruebas de independencia ####################################")
                         print("1.Prueba de corrida")
                         print("2.Prueba de serie")
                         print("3.Prueba de poker")
@@ -224,7 +250,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
     elif Puntero_Interno == 2:
         system("cls")
         while 1:
-            print("######################## Bienvenido al menu del generador Estandar minimo ####################################")
+            print("######################## Bienvenido al menu de las pruebas del generador Estandar minimo ####################################")
             print("1.Prueba de x2")
             print("2.Prueba kolmogorov")
             print("3.Volver")
@@ -248,7 +274,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                     while (Puntero_Interno3 > 2 or Puntero_Interno3 < 1 ):
                         Puntero_Interno3 = int(input("Escoga una opcion:"))
                     if Puntero_Interno3 == 1:
-                        print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
+                        print("######################## Bienvenido a las pruebas de independencia ####################################")
                         print("1.Prueba de corrida")
                         print("2.Prueba de serie")
                         print("3.Prueba de poker")
@@ -300,7 +326,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                     while (Puntero_Interno3 > 2 or Puntero_Interno3 < 1 ):
                         Puntero_Interno3 = int(input("Escoga una opcion:"))
                     if Puntero_Interno3 == 1:
-                        print("######################## Bienvenido al menu de las pruebas de independencia ####################################")
+                        print("######################## Bienvenido a las pruebas de independencia ####################################")
                         print("1.Prueba de corrida")
                         print("2.Prueba de serie")
                         print("3.Prueba de poker")
