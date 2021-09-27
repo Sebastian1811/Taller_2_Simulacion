@@ -1,4 +1,5 @@
 import math
+from decimal import *
 corridas = list()
 TablaSeries = [
 [0,0,0,0,0],
@@ -166,6 +167,24 @@ def CalcularChi(TablaFrecuencia,datosGenerados):
             numerador = (FE - TablaSeries[i][j])**2
             TablaSeriesCalc[i][j] = numerador / FE
 
+def DibujarSeries(TablaFrecuencia,Tablaseries):
+    colum = 0
+    getcontext()
+    getcontext().prec = 2
+    for i in range(len(TablaFrecuencia)):
+        if i == 0:
+            print("             |0 - 0.2  | 0.2 - 0.4  |  0.4 - 0.6  | 0.6 - 0.8  | 0.8 - 1  |")
+        if colum + Decimal(0.2) <=1:
+            print( colum ,"-", colum+ Decimal(0.2),end ="")
+            colum += Decimal(0.2)
+        for j in range(len(Tablaseries)):
+            print("       ",TablaFrecuencia[i][j],"       ",end="")
+
+        print()
+def reinicarMatrix(matrix):
+    for i in range(len(matrix)):
+        for j in range(len(matrix)):
+            matrix [i][j] = 0
 def pruebaSeries(recurrencias):
     Xcritico = 36.42
     Xcalc = 0
@@ -174,6 +193,7 @@ def pruebaSeries(recurrencias):
     for i in range(len(TablaSeriesCalc)):
         for j in range(len(TablaSeriesCalc)):
             Xcalc += TablaSeriesCalc[i][j]
+    DibujarSeries(TablaSeries,TablaSeriesCalc)
     if Xcalc <= Xcritico:
         print( "Como Xcalc"+ " <= "+ "X2crit SE ACEPTA!!! la hipotesis de que los datos tienen distribucion uniforme bidimensional")
         print("")
@@ -184,6 +204,8 @@ def pruebaSeries(recurrencias):
         print("")
         print(Xcalc," > ",Xcritico)
         print("")
+    reinicarMatrix(TablaSeriesCalc)
+    reinicarMatrix(TablaSeries)    
 
 def calcularPoker(recurrencias):
     casos = [0, 0, 0]
@@ -238,8 +260,9 @@ array2 = [0.08, 0.09, 0.23, 0.29, 0.42, 0.55, 0.58, 0.72, 0.89, 0.91,
 0.01, 0.09, 0.30, 0.32, 0.45, 0.47, 0.69, 0.74, 0.91, 0.95,
 0.12, 0.13, 0.29, 0.36, 0.38, 0.54, 0.68, 0.86, 0.88, 0.91]
 #PruebaCorridas(array1,40)
-#PruebaCorridas(array1,40)"""
+#PruebaCorridas(array1,40)
 
 """print(MapearPares(array1))
 print(len(MapearPares(array1)))
 """
+#DibujarSeries(TablaSeries,TablaSeriesCalc)
