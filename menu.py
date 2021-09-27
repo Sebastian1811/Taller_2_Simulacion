@@ -16,9 +16,9 @@ def probar_generadores():
         print("4.Volver")
         print("")
         print("############################################################")
-        Puntero_Interno = int(input("Eliga una opcion:"))
+        Puntero_Interno = int(input("Porfavor seleccione un generador:"))
         while (Puntero_Interno > 4 or Puntero_Interno < 1):
-            Puntero_Interno = int(input("Eliga una opcion:"))
+            Puntero_Interno = int(input("Porfavor seleccione un generador:"))
         if Puntero_Interno == 1:
             system("cls")
             print("######################## Bienvenido al  generador lineal congruente ####################################")
