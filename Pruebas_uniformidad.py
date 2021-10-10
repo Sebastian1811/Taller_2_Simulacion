@@ -5,15 +5,16 @@ ChiCalculadoTabla = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 KolmogorovCalculado =  [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 FOA = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 #"""TablaFrecuencia,datosGenerados""" parametros prueba x2
-def PruebaChiCuadrado(modo):
+def PruebaChiCuadrado(modo,datosGenerados):
+    #datosGenerados = int(input("Cuantos datos desea generar: "))
     if modo ==1 :
-        ge.generadorlincong(1000)
+        ge.generadorlincong(datosGenerados)
     elif modo == 2:
-        ge.generadorestmin(1000)
+        ge.generadorestmin(datosGenerados)
     else:
-        ge.generadorPython(1000)
+        ge.generadorPython(datosGenerados)
     TablaFrecuencia = ge.returnTabla()
-    datosGenerados = 1000
+    #datosGenerados = #1000
     Xcritico = 16.92#float(input("Ingrese el chi critico: "))
     ChiCalculado(TablaFrecuencia,datosGenerados)
     DibujarTabla(TablaFrecuencia,Xcritico,datosGenerados)
@@ -58,15 +59,15 @@ def CalcKolmogorov(TablaFrecuencia,numerodatos):
         KolmogorovCalculado[i] = abs (Rango - Decimal(Decimal(FOA[i])/numerodatos))
         Rango += Decimal(0.1)
 #TablaFrecuencia,datosGenerados
-def PruebaKolmogorov(modo):
-    GradosLibertad = 999
-    datosGenerados = 1000
+def PruebaKolmogorov(modo,datosGenerados):
+    #GradosLibertad = 999
+    #datosGenerados = 1000
     if modo ==1:
-        ge.generadorlincong(1000)
+        ge.generadorlincong(datosGenerados)
     elif modo == 2:
-        ge.generadorestmin(1000)
+        ge.generadorestmin(datosGenerados)
     else:
-        ge.generadorPython(1000)
+        ge.generadorPython(datosGenerados)
     TablaFrecuencia = ge.returnTabla()
     Dmcritico = 1.36 / math.sqrt(datosGenerados)
     CalcularFOA(TablaFrecuencia)

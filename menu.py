@@ -5,7 +5,6 @@ from os import system
 contador = True
 contador2 = True
 contador3 = True
-
 def probar_generadores():
     while True:
         print("############################# Bienvenido al menu de generadores ###############################")
@@ -151,7 +150,8 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                 system("cls")
                 print("\n")
                 print("/////////PRUEBA DE CHI CUADRADO ////////////////")
-                prueba.PruebaChiCuadrado(1)
+                datos =int(input("Cuantos datos desea generar: "))
+                prueba.PruebaChiCuadrado(1,datos)
                 print("\n")
                 while 1:
                     print("######################## Bienvenido al menu de las pruebas de independencia del generador lineal congruente ####################################")
@@ -179,7 +179,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 print("")
                                 print("///////////////////// Prueba de corrida ///////////////////" )
                                 print("")
-                                pruebaI.PruebaCorridas(returnRecurrrencias(),1000)
+                                pruebaI.PruebaCorridas(returnRecurrrencias(),datos)
                                 break
                             elif Puntero_Interno4 == 2:
                                 print("")
@@ -206,7 +206,8 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                 system("cls")
                 print("\n")
                 print("/////////PRUEBA DE KOLMOGOROV////////////////")
-                prueba.PruebaKolmogorov(1)
+                datos =int(input("Cuantos datos desea generar: "))
+                prueba.PruebaKolmogorov(1,datos)
                 print("\n")
                 while 1:
                     print("######################## Bienvenido al menu de las pruebas de independencia del generador lineal congruente ####################################")
@@ -235,7 +236,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 print("")
                                 print("///////////////////// Prueba de corrida ///////////////////" )
                                 print("")
-                                pruebaI.PruebaCorridas(returnRecurrrencias(),1000)
+                                pruebaI.PruebaCorridas(returnRecurrrencias(),datos)
                                 break
                             elif Puntero_Interno4 == 2:
                                 print("")
@@ -276,7 +277,8 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                 system("cls")
                 print("\n")
                 print("/////////PRUEBA DE chi cuadrado////////////////")
-                prueba.PruebaChiCuadrado(2)
+                datos =int(input("Cuantos datos desea generar: "))
+                prueba.PruebaChiCuadrado(2,datos)
                 print("\n")
                 while 1:
                     print("######################## Bienvenido al menu de las pruebas de independencia del generador de Estandar minimo ####################################")
@@ -304,7 +306,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 print("")
                                 print("///////////////////// Prueba de corrida ///////////////////" )
                                 print("")
-                                pruebaI.PruebaCorridas(returnRecurrrencias(),1000)
+                                pruebaI.PruebaCorridas(returnRecurrrencias(),datos)
                                 break
                             elif Puntero_Interno4 == 2:
                                 print("")
@@ -329,7 +331,8 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
             elif Puntero_Interno2 == 2:
                 system("cls")
                 print("/////////PRUEBA DE KOLMOGOROV////////////////")
-                prueba.PruebaKolmogorov(2)
+                datos =int(input("Cuantos datos desea generar: "))
+                prueba.PruebaKolmogorov(2,datos)
                 while 1:
                     print("\n")
                     print("\n")
@@ -358,7 +361,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 print("")
                                 print("///////////////////// Prueba de corrida ///////////////////" )
                                 print("")
-                                pruebaI.PruebaCorridas(returnRecurrrencias(),1000)
+                                pruebaI.PruebaCorridas(returnRecurrrencias(),datos)
                                 break
                             elif Puntero_Interno4 == 2:
                                 print("")
@@ -399,7 +402,8 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                 system("cls")
                 print("\n")
                 print("/////////PRUEBA DE CHI CUADRADO ////////////////")
-                prueba.PruebaChiCuadrado(3)
+                datos =int(input("Cuantos datos desea generar: "))
+                prueba.PruebaChiCuadrado(3,datos)
                 print("\n")
                 while 1:
                     print("######################## Bienvenido al menu de las pruebas de independencia del generador de Python ####################################")
@@ -427,7 +431,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 print("")
                                 print("///////////////////// Prueba de corrida ///////////////////" )
                                 print("")
-                                pruebaI.PruebaCorridas(returnRecurrrencias(),1000)
+                                pruebaI.PruebaCorridas(returnRecurrrencias(),datos)
                                 break
                             elif Puntero_Interno4 == 2:
                                 print("")
@@ -454,7 +458,8 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                 system("cls")
                 print("\n")
                 print("/////////PRUEBA DE KOLMOGOROV////////////////")
-                prueba.PruebaKolmogorov(3)
+                datos =int(input("Cuantos datos desea generar: "))
+                prueba.PruebaKolmogorov(3,datos)
                 print("\n")
                 while 1:
                     print("######################## Bienvenido al menu de las pruebas de independencia del generador de Python ####################################")
@@ -483,7 +488,7 @@ def Prubas_Uniformidad_independencia(Puntero_Interno):
                                 print("")
                                 print("///////////////////// Prueba de corrida ///////////////////" )
                                 print("")
-                                pruebaI.PruebaCorridas(returnRecurrrencias(),1000)
+                                pruebaI.PruebaCorridas(returnRecurrrencias(),datos)
                                 break
                             elif Puntero_Interno4 == 2:
                                 print("")

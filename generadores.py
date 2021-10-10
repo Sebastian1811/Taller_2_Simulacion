@@ -60,6 +60,8 @@ def generadorlincong(Datosrequeridos):
         datosGenerados.append(res)
         recurrencias.append(round(res/m,3))
         EvaluarRecurrencia(res,m)
+    HallarPeriodo()
+
 
 def generadorestmin(Datosrequeridos):
     a = int(input("a es: "))
@@ -77,6 +79,8 @@ def generadorestmin(Datosrequeridos):
         datosGenerados.append(res)
         recurrencias.append(round(res/m,3))
         EvaluarRecurrencia(res,m)
+    HallarPeriodo()
+
 def generadorPython(Datosrequeridos):
     global n
     n = Datosrequeridos
@@ -85,10 +89,16 @@ def generadorPython(Datosrequeridos):
         datosGenerados.append(res)
         recurrencias.append(res/1000)
         EvaluarRecurrencia(res,1000)
+    HallarPeriodo()
+
 
 def HallarPeriodo():
-    Periodo = datosGenerados.index(datosGenerados[0],1) + 1
-    return Periodo
+    try:
+        Periodo = datosGenerados.index(datosGenerados[0],1) + 1
+        print("El periodo para este generador es: ", Periodo)
+    except ValueError:
+       print("Oops! No hay periodo disponible para la cantidad de datos que genero.")
+
 def VerDatosGenerados(datos):
     for i in range(len(datos)):
         print(datos[i])
