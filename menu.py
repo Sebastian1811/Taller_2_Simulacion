@@ -108,7 +108,7 @@ def probar_generadores():
 def menuUniformidad():
     while 1:
         system("cls")
-        print("Se corre con 1000 datos generados y con 9 grados de libertad")
+        #print("Se corre con 1000 datos generados y con 9 grados de libertad")
         print("############################# Bienvenido al menu de pruebas de uniformidad e independencia ###############################")
         print("\n")
         print("1.Generador lineal congruente")

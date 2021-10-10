@@ -32,6 +32,8 @@ def PruebaChiCuadrado(modo,datosGenerados):
         print("Segun la prueba chiCuadrado: ChiCalculado <= chicritico")
         print(sum(ChiCalculadoTabla),">",Xcritico)
         print("")
+    verDatos()
+
 
 def ChiCalculado(TablaFrecuencia,datosGenerados):
     getcontext()
@@ -84,6 +86,7 @@ def PruebaKolmogorov(modo,datosGenerados):
         print("Segun la prueba de Kolmogorov el generador NO!!!!! es bueno en cuanto a uniformidad")
         print(min(KolmogorovCalculado)," > ",Dmcritico)
         print("")
+    verDatos()
 def CalcularFOA(TablaFrecuencia):
 
     for i in range(10):
@@ -99,3 +102,20 @@ def DibujarKolmogorov(TablaFrecuencia,datosGenerados):
     for i in range(10):
         print(rango,"-" ,rango +Decimal(0.1)," | ",TablaFrecuencia[i]," | ", FOA[i],"  |   ",FOA[i]/datosGenerados,"  |  ",rango+Decimal(0.1),"     |  ",KolmogorovCalculado[i])
         rango =Decimal( rango + Decimal(0.1))
+def verDatos():
+    print("Desea ver los datos generados?: ")
+    print("[1] Si")
+    print("[2] No")
+
+    while 1:
+        opcion = input("Seleccione: ")
+        try:
+            if int(opcion) == 1:
+                ge.VerDatosGenerados(ge.returnDatos())
+                break
+            elif int(opcion) == 2:
+                break
+            else:
+                print("Opcion inexistente")    
+        except ValueError:
+            print("Opcion invalida")
