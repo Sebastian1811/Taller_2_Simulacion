@@ -90,7 +90,6 @@ def PruebaKolmogorov(modo,datosGenerados):
     verDatos()
     verRecurrencias()
 def CalcularFOA(TablaFrecuencia):
-
     for i in range(10):
         if i == 0:
             FOA[i] = TablaFrecuencia[i]
