@@ -33,6 +33,7 @@ def PruebaChiCuadrado(modo,datosGenerados):
         print(sum(ChiCalculadoTabla),">",Xcritico)
         print("")
     verDatos()
+    verRecurrencias()
 
 
 def ChiCalculado(TablaFrecuencia,datosGenerados):
@@ -87,6 +88,7 @@ def PruebaKolmogorov(modo,datosGenerados):
         print(min(KolmogorovCalculado)," > ",Dmcritico)
         print("")
     verDatos()
+    verRecurrencias()
 def CalcularFOA(TablaFrecuencia):
 
     for i in range(10):
@@ -106,7 +108,6 @@ def verDatos():
     print("Desea ver los datos generados?: ")
     print("[1] Si")
     print("[2] No")
-
     while 1:
         opcion = input("Seleccione: ")
         try:
@@ -116,6 +117,22 @@ def verDatos():
             elif int(opcion) == 2:
                 break
             else:
-                print("Opcion inexistente")    
+                print("Opcion inexistente")
+        except ValueError:
+            print("Opcion invalida")
+def verRecurrencias():
+    print("Desea ver los recurrencias generadas?: ")
+    print("[1] Si")
+    print("[2] No")
+    while 1:
+        opcion = input("Seleccione: ")
+        try:
+            if int(opcion) == 1:
+                ge.VerDatosGenerados(ge.returnRecurrrencias())
+                break
+            elif int(opcion) == 2:
+                break
+            else:
+                print("Opcion inexistente")
         except ValueError:
             print("Opcion invalida")
