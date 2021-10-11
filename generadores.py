@@ -48,9 +48,8 @@ def generadorlincong(Datosrequeridos):
     c = int(input("c es: "))
     m = int(input("m es: "))
     Xo = int(input("Xo es: "))
-    a =1+(4*a)
-    #if is_coprime(c,m):
 
+    #if is_coprime(c,m):
     global n
     n = Datosrequeridos
     print()
