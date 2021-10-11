@@ -44,10 +44,13 @@ def ReiniciarListas(lista):
         lista.pop()
 
 def generadorlincong(Datosrequeridos):
-    a = int(input("a es: "))
+    a =  int(input("a es: "))
     c = int(input("c es: "))
     m = int(input("m es: "))
     Xo = int(input("Xo es: "))
+    a =1+(4*a)
+    #if is_coprime(c,m):
+
     global n
     n = Datosrequeridos
     print()
@@ -85,10 +88,10 @@ def generadorPython(Datosrequeridos):
     global n
     n = Datosrequeridos
     for i in range(Datosrequeridos):
-        res = random.randint(1,1000)
+        res = random.randint(1,2000)
         datosGenerados.append(res)
-        recurrencias.append(res/1000)
-        EvaluarRecurrencia(res,1000)
+        recurrencias.append(res/2000)
+        EvaluarRecurrencia(res,2000)
     HallarPeriodo()
 
 
@@ -102,6 +105,16 @@ def HallarPeriodo():
 def VerDatosGenerados(datos):
     for i in range(len(datos)):
         print(datos[i])
+
+def gcd(p,q):
+# Create the gcd of two positive integers.
+    while q != 0:
+        p, q = q, p%q
+    return p
+def is_coprime(x, y):
+    return gcd(x, y) == 1
+
+
 
 """generadorlincong(10)
 VerDatosGenerados(datosGenerados)"""

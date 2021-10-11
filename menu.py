@@ -23,7 +23,9 @@ def probar_generadores():
             print("######################## Bienvenido al  generador lineal congruente ####################################")
             print("")
             datos = int(input("ingrese los datos que desea generar: "))
+
             generadorlincong(datos)
+            #HallarPeriodo()
             VerDatosGenerados(returnDatos())
             print("1.Mostrar recurrencia")
             print("2.Volver")
