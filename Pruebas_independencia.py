@@ -195,16 +195,16 @@ def DibujarSeries(TablaFrecuencia,Tablaseries):
         for j in range(len(Tablaseries)):
             print("     ",TablaSeriesCalc[i][j],"     ",end="")
         print()
-    print()    
+    print()
 def reinicarMatrix(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix)):
             matrix [i][j] = 0
 def pruebaSeries(recurrencias):
-    Xcritico = 36.42
+    Xcritico = 16.92
     Xcalc = 0
     UbicarPares(MapearPares(recurrencias))
-    CalcularChi(TablaSeries,1000)
+    CalcularChi(TablaSeries,88)
     for i in range(len(TablaSeriesCalc)):
         for j in range(len(TablaSeriesCalc)):
             Xcalc += TablaSeriesCalc[i][j]
@@ -267,18 +267,21 @@ def pruebaPoker(recurrencias):
 
 
 # /////////// PRUEBAS ////////////
-array1 = [0.41, 0.68, 0.89, 0.94, 0.74, 0.91, 0.55, 0.62, 0.36, 0.27,
-0.19, 0.72, 0.75 ,0.08, 0.54, 0.02, 0.01, 0.36, 0.16, 0.28,
-0.18, 0.01, 0.95, 0.69, 0.18, 0.47, 0.23, 0.32, 0.82, 0.53,
-0.31, 0.42, 0.73, 0.04, 0.83, 0.45, 0.13, 0.57, 0.63, 0.29
+array1 = [0.923, 0.511, 0.724, 0.489, 0.505, 0.395, 0.367, 0.902, 0.718, 0.612, 0.863, 0.941, 0.998, 0.276,0.921, 0.804, 0.141, 0.601, 0.308, 0.163,
+0.555, 0.987, 0.392, 0.571, 0.536, 0.066, 0.860, 0.869, 0.921, 0.804, 0.141, 0.601, 0.308, 0.163, 0.555, 0.987, 0.392, 0.571, 0.536, 0.066, 0.860,
+0.869, 0.163, 0.511, 0.751, 0.441 ,0.074, 0.437, 0.628, 0.727, 0.282, 0.655, 0.606, 0.699, 0.590, 0.783, 0.163, 0.511, 0.751, 0.441, 0.074, 0.437,
+0.628, 0.727, 0.282, 0.655, 0.606, 0.699, 0.590, 0.783, 0.923, 0.511, 0.724, 0.489, 0.505, 0.395, 0.367, 0.902, 0.718, 0.612, 0.863, 0.941, 0.998,
+ 0.276, 0.505, 0.395, 0.367, 0.367
 ]
 array2 = [0.08, 0.09, 0.23, 0.29, 0.42, 0.55, 0.58, 0.72, 0.89, 0.91,
 0.11, 0.16, 0.18, 0.31, 0.41, 0.53, 0.71, 0.73, 0.74, 0.84,
 0.01, 0.09, 0.30, 0.32, 0.45, 0.47, 0.69, 0.74, 0.91, 0.95,
 0.12, 0.13, 0.29, 0.36, 0.38, 0.54, 0.68, 0.86, 0.88, 0.91]
-#PruebaCorridas(array1,40)
-#PruebaCorridas(array1,40)
 
+print(len(array1))
+#PruebaCorridas(array1,40)
+#PruebaCorridas(array1,40)
+pruebaSeries(array1)
 """print(MapearPares(array1))
 print(len(MapearPares(array1)))
 """
